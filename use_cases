@@ -1,0 +1,45 @@
+Trainer/admin can:
+
+✓ Create account-1
+
+create workout templates-2
+
+assign athlete workout template-2.5
+
+assign athlete nutrition goals-2.5
+
+monitor athletes workouts logged-4
+
+monitor athletes nutrition logged-4
+
+recieve comments from athlete workouts-5
+
+chat with athletes-5
+
+assign athlete custom workout-6
+
+payment-7
+
+
+
+Athlete can:
+
+✓ Create account-1
+
+submit info-2
+
+create goals-2
+
+receive workout schedule-2.5
+
+log nutrition daily-2.5
+
+select day you'd like view workout(open modal)-2.5
+
+start workout(leave modal and go to workout page)-3
+
+comment on workout-3
+
+finish workout(save workout and go back to dashboard)-3
+
+chat with trainer-5

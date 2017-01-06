@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FitApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <% if athlete_signed_in? %>
+      <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "headbtns" %>
+    <% else %>
+      <%= link_to "Sign In",  new_athlete_session_path, class: "headbtns"  %>
+      <%= link_to "Create Account",  new_athlete_registration_path, class: "headbtns"  %>
+    <% end %>
+  </header>
+  	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
