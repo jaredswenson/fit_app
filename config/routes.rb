@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'athletes/update'
+
   get 'home/index'
 
   devise_for :athletes, controllers: {
