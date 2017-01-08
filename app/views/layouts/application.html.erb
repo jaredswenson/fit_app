@@ -10,8 +10,9 @@
 
   <body>
   <header>
-    <% if athlete_signed_in? %>
+    <% if athlete_signed_in? or trainer_signed_in? %>
       <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "headbtns" %>
+      <%= link_to "Edit User",  edit_athlete_registration_path, class: "headbtns"  %>
     <% else %>
       <%= link_to "Sign In",  new_athlete_session_path, class: "headbtns"  %>
       <%= link_to "Create Account",  new_athlete_registration_path, class: "headbtns"  %>
