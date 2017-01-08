@@ -1,0 +1,39 @@
+<h1>Athletes#update</h1>
+<p>Find me in app/views/athletes/update.html.erb</p>
+
+<%= form_for(@athlete, :url => athlete_update_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+
+   <div class="field">
+    <%= f.label :body_fat %><br />
+    <%= f.select :body_fat, ['0-5%', '10-15%', '20-25%', '25% +'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :goal %><br />
+    <%= f.select :goal, ['Build Muscle', 'Lose Fat', 'Maintain', 'Just For Fun'] %>
+  </div>
+	
+   <div class="field">
+    <%= f.label :intensity %><br />
+    <%= f.select :intensity, ['One', 'Two', 'Three'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :days_per_week %><br />
+    <%= f.select :days_per_week, ['Three', 'Four', 'Five', 'Six'] %>
+  </div>	  
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

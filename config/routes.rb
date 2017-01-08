@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'athletes/update'
+  get 'athletes/info' => 'athletes#info', as: 'athlete'
+
+  patch 'athletes/update' => 'athletes#update', as: 'athlete_update'
 
   get 'home/index'
 

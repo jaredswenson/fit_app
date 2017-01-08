@@ -1,4 +1,6 @@
                      Prefix Verb   URI Pattern                       Controller#Action
+                    athlete GET    /athletes/info(.:format)          athletes#info
+             athlete_update POST   /athletes/update(.:format)        athletes#update
                  home_index GET    /home/index(.:format)             home#index
         new_athlete_session GET    /athletes/sign_in(.:format)       athletes/sessions#new
             athlete_session POST   /athletes/sign_in(.:format)       athletes/sessions#create
