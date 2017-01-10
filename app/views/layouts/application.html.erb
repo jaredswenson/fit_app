@@ -6,15 +6,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
   </head>
 
   <body>
   <header>
-    <% if athlete_signed_in? or trainer_signed_in? %>
+    <% if athlete_signed_in? %>
       <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "headbtns" %>
-      <%= link_to "Edit User",  edit_athlete_registration_path, class: "headbtns"  %>
+      <%= link_to "Edit Account",  edit_athlete_registration_path, class: "headbtns"  %>
+    <% elsif trainer_signed_in? %>
+      <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "headbtns" %>
+      <%= link_to "Edit Account",  edit_trainer_registration_path, class: "headbtns"  %>
+      <%= link_to "Create New Exercise",  exercise_new_path, class: "headbtns"  %>
+      <%= link_to "Create New Template",  new_template_path, class: "headbtns"  %>
     <% else %>
       <%= link_to "Sign In",  new_athlete_session_path, class: "headbtns"  %>
+      <%= link_to "Trainer Sign In",  new_trainer_session_path, class: "headbtns"  %>
       <%= link_to "Create Account",  new_athlete_registration_path, class: "headbtns"  %>
     <% end %>
   </header>

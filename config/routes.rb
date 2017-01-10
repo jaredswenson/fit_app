@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+
+  resources :exercises
+  resources :templates
+
   get 'athletes/info' => 'athletes#info', as: 'athlete'
 
   patch 'athletes/update' => 'athletes#update', as: 'athlete_update'
+
+  post 'exercises/new' => 'exercise#new', as: 'exercise_new'
 
   get 'home/index'
 

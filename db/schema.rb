@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106233242) do
+ActiveRecord::Schema.define(version: 20170110225855) do
 
   create_table "athletes", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,18 +27,38 @@ ActiveRecord::Schema.define(version: 20170106233242) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.integer  "trainer_id"
     t.string   "height"
     t.integer  "weight"
     t.date     "birthday"
     t.string   "body_fat"
     t.string   "goal"
-    t.string   "intensity"
-    t.string   "days_per_week"
+    t.integer  "days_per_week"
+    t.integer  "goal_weight"
+    t.string   "gender"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "template_id"
     t.index ["email"], name: "index_athletes_on_email", unique: true
     t.index ["reset_password_token"], name: "index_athletes_on_reset_password_token", unique: true
+    t.index ["template_id"], name: "index_athletes_on_template_id"
+    t.index ["trainer_id"], name: "index_athletes_on_trainer_id"
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "primary_muscle"
+    t.string   "secondary_muscle"
+    t.text     "instruction"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "templates", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trainers", force: :cascade do |t|
@@ -58,6 +78,14 @@ ActiveRecord::Schema.define(version: 20170106233242) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_trainers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_trainers_on_reset_password_token", unique: true
+  end
+
+  create_table "workouts", force: :cascade do |t|
+    t.integer "exercise_id"
+    t.integer "template_id"
+    t.integer "day_number"
+    t.index ["exercise_id"], name: "index_workouts_on_exercise_id"
+    t.index ["template_id"], name: "index_workouts_on_template_id"
   end
 
 end

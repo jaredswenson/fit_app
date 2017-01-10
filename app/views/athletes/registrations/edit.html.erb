@@ -38,6 +38,11 @@
     <%= f.text_field :weight %>
   </div>
 
+  <div class="field">
+    <%= f.label :goal_weight %><br />
+    <%= f.text_field :goal_weight %>
+  </div>
+
    <div class="field">
     <%= f.label :body_fat %><br />
     <%= f.select :body_fat, ['0-5%', '10-15%', '20-25%', '25% +'] %>
@@ -45,7 +50,7 @@
 
   <div class="field">
     <%= f.label :goal %><br />
-    <%= f.select :goal, ['Build Muscle', 'Lose Fat', 'Maintain', 'Just For Fun'] %>
+    <%= f.select :goal, ['Build Muscle', 'Lose Fat'] %>
   </div>
 
   <div class="field">

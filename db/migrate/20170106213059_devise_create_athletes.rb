@@ -33,7 +33,16 @@ class DeviseCreateAthletes < ActiveRecord::Migration[5.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
+      t.references :trainer
+      t.string :height
+      t.integer :weight
+      t.date :birthday
+      t.string :body_fat
+      t.string :goal
+      t.integer :days_per_week
+      t.integer :goal_weight
+      t.string :gender
+      t.references :template
 
       t.timestamps null: false
     end

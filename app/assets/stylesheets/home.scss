@@ -1,3 +1,36 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#all_exercises{
+	width: 33%;
+	height: 500px;
+	overflow: scroll;
+	border: 2px red solid;
+	float: left;
+}
+
+#new_template{
+	width: 33%;
+	height: 500px;
+	overflow: scroll;
+	border: 2px red solid;
+	float: left;
+}
+
+.day{
+	width: 100%;
+	min-height: 300px;
+	height: auto;
+	background-color: red;
+	border-bottom: 1px black solid;
+}
+
+.specific_exercise:hover{
+	background-color: gray;
+}
+
+.ui-draggable{
+	left: 1px!important;
+	top: 1px!important;
+}

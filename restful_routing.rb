@@ -1,6 +1,23 @@
                      Prefix Verb   URI Pattern                       Controller#Action
+                  exercises GET    /exercises(.:format)              exercises#index
+                            POST   /exercises(.:format)              exercises#create
+               new_exercise GET    /exercises/new(.:format)          exercises#new
+              edit_exercise GET    /exercises/:id/edit(.:format)     exercises#edit
+                   exercise GET    /exercises/:id(.:format)          exercises#show
+                            PATCH  /exercises/:id(.:format)          exercises#update
+                            PUT    /exercises/:id(.:format)          exercises#update
+                            DELETE /exercises/:id(.:format)          exercises#destroy
+                  templates GET    /templates(.:format)              templates#index
+                            POST   /templates(.:format)              templates#create
+               new_template GET    /templates/new(.:format)          templates#new
+              edit_template GET    /templates/:id/edit(.:format)     templates#edit
+                   template GET    /templates/:id(.:format)          templates#show
+                            PATCH  /templates/:id(.:format)          templates#update
+                            PUT    /templates/:id(.:format)          templates#update
+                            DELETE /templates/:id(.:format)          templates#destroy
                     athlete GET    /athletes/info(.:format)          athletes#info
-             athlete_update POST   /athletes/update(.:format)        athletes#update
+             athlete_update PATCH  /athletes/update(.:format)        athletes#update
+               exercise_new POST   /exercises/new(.:format)          exercise#new
                  home_index GET    /home/index(.:format)             home#index
         new_athlete_session GET    /athletes/sign_in(.:format)       athletes/sessions#new
             athlete_session POST   /athletes/sign_in(.:format)       athletes/sessions#create

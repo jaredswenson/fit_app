@@ -1,0 +1,19 @@
+<h1>Templates#index</h1>
+<p>Find me in app/views/templates/index.html.erb</p>
+
+<div id="all_exercises">
+	<div class="categories">
+		<% @templates.each do |template| %>
+				<h3>Name: <%= template.name%></h3>
+				<% template.workouts.where(day_number: 1).each do |workout| %>
+				Day 1:
+					<%= workout.exercise.name %>
+				<% end %>
+				<br>
+				<% template.workouts.where(day_number: 2).each do |workout| %>
+				Day 2:
+					<%= workout.exercise.name %>
+				<% end %>
+			</div>
+		<% end %>
+</div>

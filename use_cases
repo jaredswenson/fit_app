@@ -2,11 +2,11 @@ Trainer/admin can:
 
 ✓ Create account-1
 
-create workout templates-2
+✓ create workout templates-2
 
-assign athlete workout template-2.5
+assign athlete workout template-2.5 (automated based on goals and days per week)
 
-assign athlete nutrition goals-2.5
+assign athlete nutrition goals-2.5 (calculated on weight and goal weight)
 
 monitor athletes workouts logged-4
 
@@ -43,3 +43,35 @@ comment on workout-3
 finish workout(save workout and go back to dashboard)-3
 
 chat with trainer-5
+
+
+
+Workout Logic - 
+
+Mens Bulk
+3 days = arms + shoulders, chest + back, legs - 3x8
+
+4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x8
+
+5 days = Arms, Shoulders, Chest, Back, Legs - 3x8
+
+Mens Fat Loss
+3 days = arms + shoulders, chest + back, legs - 3x12
+
+4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x12
+
+5 days = Arms, Shoulders, Chest, Back, Legs - 3x12
+
+Womens Bulk
+3 days = arms + shoulders, chest + back, legs - 3x10
+
+4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x10
+
+5 days = Arms, Shoulders, Chest, Back, Legs - 3x10
+
+Womens Fat Loss
+3 days = arms + shoulders, chest + back, legs - 3x15
+
+4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x15
+
+5 days = Arms, Shoulders, Chest, Back, Legs - 3x15

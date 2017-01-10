@@ -1,0 +1,73 @@
+<div id="all_exercises">
+	<div class="categories">
+		<h1>ARMS</h1>
+		<% @exercises.where(category: "Arms").each do |exercise| %>
+			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
+				<h3>Name: <%= exercise.name%></h3>
+				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
+				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
+				<p>Instruction: <%= exercise.instruction %></p>
+			</div>
+		<% end %>
+	</div>
+	<hr>
+	<div class="categories">
+		<h1>Shoulders</h1>
+		<% @exercises.where(category: "Shoulders").each do |exercise| %>
+			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
+				<h3>Name: <%= exercise.name%></h3>
+				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
+				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
+				<p>Instruction: <%= exercise.instruction %></p>
+			</div>
+		<% end %>
+	</div>
+	<hr>
+	<div class="categories">
+		<h1>Legs</h1>
+		<% @exercises.where(category: "Legs").each do |exercise| %>
+			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
+				<h3>Name: <%= exercise.name%></h3>
+				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
+				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
+				<p>Instruction: <%= exercise.instruction %></p>
+			</div>
+		<% end %>
+	</div>
+	<hr>
+	<div class="categories">
+		<h1>Chest</h1>
+		<% @exercises.where(category: "Chest").each do |exercise| %>
+			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
+				<h3>Name: <%= exercise.name%></h3>
+				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
+				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
+				<p>Instruction: <%= exercise.instruction %></p>
+			</div>
+		<% end %>
+	</div>
+	<hr>
+	<div class="categories">
+		<h1>Back</h1>
+		<% @exercises.where(category: "Back").each do |exercise| %>
+			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
+				<h3>Name: <%= exercise.name%></h3>
+				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
+				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
+				<p>Instruction: <%= exercise.instruction %></p>
+			</div>
+		<% end %>
+	</div>
+	<hr>
+	<div class="categories">
+		<h1>Core</h1>
+		<% @exercises.where(category: "Core").each do |exercise| %>
+			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
+				<h3>Name: <%= exercise.name%></h3>
+				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
+				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
+				<p>Instruction: <%= exercise.instruction %></p>
+			</div>
+		<% end %>
+	</div>
+</div>
