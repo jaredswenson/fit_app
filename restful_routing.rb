@@ -16,6 +16,7 @@
                             PUT    /templates/:id(.:format)          templates#update
                             DELETE /templates/:id(.:format)          templates#destroy
                     athlete GET    /athletes/info(.:format)          athletes#info
+              athlete_index GET    /athletes/index(.:format)         athletes#index
              athlete_update PATCH  /athletes/update(.:format)        athletes#update
                exercise_new POST   /exercises/new(.:format)          exercise#new
                  home_index GET    /home/index(.:format)             home#index

@@ -20,6 +20,7 @@ before_action :configure_account_update_params, only: [:update]
   # PUT /resource
   def update
     super
+    @athlete.assign_template
   end
 
   # DELETE /resource
@@ -36,21 +37,26 @@ before_action :configure_account_update_params, only: [:update]
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :intensity, :days_per_week, :goal, :trainer_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :body_fat, :goal_weight, :gender, :birthday, :days_per_week, :goal, :trainer_id, :template_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :intensity, :days_per_week, :goal, :trainer_id])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :body_fat, :goal_weight, :gender, :birthday, :days_per_week, :goal, :trainer_id, :template_id])
   end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     athlete_path
+  end
+
+
+  def after_update_path_for(resource)
+    athlete_index_path(resource)
   end
 
   # The path used after sign up for inactive accounts.

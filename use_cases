@@ -4,9 +4,9 @@ Trainer/admin can:
 
 ✓ create workout templates-2
 
-assign athlete workout template-2.5 (automated based on goals and days per week)
+✓ assign athlete workout template-2.5 (automated based on goals and days per week)
 
-assign athlete nutrition goals-2.5 (calculated on weight and goal weight)
+WAITING ON API - assign athlete nutrition goals-2.5 (calculated on weight and goal weight)
 
 monitor athletes workouts logged-4
 
@@ -30,11 +30,11 @@ Athlete can:
 
 ✓ create goals-2
 
-receive workout schedule-2.5
+✓ receive workout schedule-2.5
 
-log nutrition daily-2.5
+WAITING ON API - log nutrition daily-2.5
 
-select day you'd like view workout(open modal)-2.5
+✓ select day you'd like view workout-2.5
 
 start workout(leave modal and go to workout page)-3
 
@@ -75,3 +75,4 @@ Womens Fat Loss
 4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x15
 
 5 days = Arms, Shoulders, Chest, Back, Legs - 3x15
+

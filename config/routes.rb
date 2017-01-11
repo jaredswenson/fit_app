@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'athletes/info' => 'athletes#info', as: 'athlete'
 
+  get 'athletes/index' => 'athletes#index', as: 'athlete_index'
+
   patch 'athletes/update' => 'athletes#update', as: 'athlete_update'
 
   post 'exercises/new' => 'exercise#new', as: 'exercise_new'

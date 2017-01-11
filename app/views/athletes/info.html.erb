@@ -2,9 +2,14 @@
 <p>Find me in app/views/athletes/update.html.erb</p>
 
 <%= form_for(@athlete, :url => athlete_update_path) do |f| %>
-<div class="field">
+  <div class="field">
     <%= f.label :gender %><br />
     <%= f.text_field :gender, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_field :birthday%>
   </div>
 
   <div class="field">
@@ -29,12 +34,7 @@
 
   <div class="field">
     <%= f.label :goal %><br />
-    <%= f.select :goal, ['Build Muscle', 'Lose Fat', 'Maintain', 'Just For Fun'] %>
-  </div>
-	
-   <div class="field">
-    <%= f.label :intensity %><br />
-    <%= f.select :intensity, ['One', 'Two', 'Three'] %>
+    <%= f.select :goal, ['Build Muscle', 'Lose Fat', 'Just Get To The Gym!'] %>
   </div>
 
   <div class="field">

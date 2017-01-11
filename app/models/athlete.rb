@@ -5,7 +5,7 @@ class Athlete < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 		belongs_to :trainer
-		has_one :template
+		belongs_to :template
 
 	def rep_count
 		if gender == "Male" 
@@ -14,7 +14,7 @@ class Athlete < ApplicationRecord
 			elsif goal == "fat loss"
 				12
 			else #goal == "transform"
-
+				10
 			end
 		else # this would be female
 			if goal == "Bulk"
@@ -22,8 +22,19 @@ class Athlete < ApplicationRecord
 			elsif goal == "fat loss"
 				15
 			else #goal == "transform"
-
+				12
 			end
 		end	
 	end	
+
+	def assign_template
+		if self.days_per_week == 3
+			self.template_id = Template.where(name: "3 day workout").first.id
+		elsif self.days_per_week == 4
+			self.template_id = Template.where(name: "4 day workout").first.id
+		else # 5 days per week
+			self.template_id = Template.where(name: "5 day workout").first.id
+		end
+		save
+	end
 end

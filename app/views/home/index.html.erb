@@ -1,4 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="video">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/mQxQXhcIJF4?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+</div>
+<div class="login">
+	<h2>Log in</h2>
+	<%= form_for(:athlete, :url => session_path(:athlete)) do |f| %>
+	  Email:<%= f.text_field :email %> <br>
+	  Password: <%= f.password_field :password %> <br>
+	  <%= f.check_box :remember_me %> 
+	  <%= f.label :remember_me %> <br>
+	  <%= f.submit 'Sign in', class: "btn" %>
+	  <%= link_to 'Create Account', new_athlete_registration_path, class: "btn"  %> <br>
+	  <%= link_to "Forgot your password?", new_password_path(:athlete)%>
+	<% end %>
+</div>
 
 

@@ -14,6 +14,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_field :birthday%>
+  </div>
+
+  <div class="field">
     <%= f.label :home_gym %><br />
     <%= f.text_field :home_gym %>
   </div>
@@ -30,7 +40,7 @@
 
   <div class="field">
     <%= f.label :height %><br />
-    <%= f.text_field :height, autofocus: true %>
+    <%= f.text_field :height %>
   </div>
 
   <div class="field">
@@ -50,17 +60,13 @@
 
   <div class="field">
     <%= f.label :goal %><br />
-    <%= f.select :goal, ['Build Muscle', 'Lose Fat'] %>
+    <%= f.select :goal, ['Build Muscle', 'Lose Fat', 'Just Get To The Gym!'] %>
   </div>
 
-  <div class="field">
-    <%= f.label :intensity %><br />
-    <%= f.select :intensity, ['One', 'Two', 'Three'] %>
-  </div>
 
   <div class="field">
     <%= f.label :days_per_week %><br />
-    <%= f.select :days_per_week, ['Three', 'Four', 'Five', 'Six'] %>
+    <%= f.select :days_per_week, [3,4,5] %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

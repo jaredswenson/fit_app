@@ -1,3 +1,53 @@
-// Place all the styles related to the athletes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	color: gray;
+}
+
+.dashboard{
+	width: 95%;
+	margin: 0 auto;
+}
+
+#athlete_info{
+	background-color: #383B3D;
+	color: white;
+	height: 300px;
+	overflow: scroll;
+	border-radius: 5px;
+	border: 2px #02A9F4 solid;
+	padding-left: 30px;
+}
+
+.card{
+	background-color: #383B3D;
+	color: white;
+	height: 300px;
+	overflow: scroll;
+	border-radius: 5px;
+	border: 2px #02A9F4 solid;
+}
+
+.row{
+	margin: 1px;
+}
+
+
+input{
+	background: none;
+	border: none;
+	border-bottom: 1px white solid;
+	width: auto;
+}
+
+select{
+	background-color: black;
+	color: red;
+	border-bottom: 1px white solid;
+}
+
+#update{
+	float: left;
+}
+
+.profile{
+	margin-bottom: 10px;
+}

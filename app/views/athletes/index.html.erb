@@ -1,0 +1,104 @@
+<div class="dashboard">
+	<div class="row">
+		<div class="card col-md-4" id="athlete_info">
+		<h1><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
+			<div class="info">
+			<h1></h1>
+				<%= form_for(@athlete, :url => athlete_update_path) do |f| %>
+					<i>Click to edit info</i>
+				  <div class="field profile">
+				    Home Gym: <%= f.text_field :home_gym %>
+				  </div>
+
+				  <div class="field profile">
+				    Phone: <%= f.text_field :phone %>
+				  </div>
+
+				  <div class="field profile">
+				    Email: <%= f.email_field :email %>
+				  </div>
+
+				  <div class="field profile">
+				    Height: <%= f.text_field :height %>
+				  </div>
+
+				  <div class="field profile">
+				    Weight: <%= f.text_field :weight %>
+				  </div>
+
+				  <div class="field profile">
+				    Goal Weight: <%= f.text_field :goal_weight %>
+				  </div>
+
+				   <div class="field profile">
+				    Body Fat Range: <%= f.select :body_fat, ['0-5%', '10-15%', '20-25%', '25% +'], class: "select" %>
+				  </div>
+
+				  <div class="field profile">
+				    Goal: <%= f.select :goal, ['Build Muscle', 'Lose Fat', 'Just Get To The Gym!'], class: "select" %>
+				  </div>
+
+
+				  <div class="field profile">
+				    Days Per Week: <%= f.select :days_per_week, [3,4,5], class: "select" %>
+				  </div>
+
+				  <div class="actions">
+				    <%= f.submit "Update", class: "btn", id: "update" %>
+				  </div>
+				<% end %>
+			</div>
+		</div>
+			<div class="card col-md-4">
+			<h1><%= @template.name %></h1>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+					  <h2>View Schedule</h2>
+				</button> 
+			</div>
+
+
+		<div class="card col-md-4">
+			logged workouts
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="card col-md-4">
+			chat box
+		</div>
+		
+		<div class="card col-md-4">
+			nutrition goals
+		</div>
+
+
+		<div class="card col-md-4">
+			logged nutrition	
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><h1><%= @template.name %></h1></h4>
+      </div>
+      <div class="modal-body">
+			<%  @template_exercises.each do |day, exercises| %>
+				<div class="schedule">
+				<h2>Day <%= day %> <a href="">Start Workout</a></h2>
+					<% exercises.each do |exercise| %>
+					  	<h3><%= exercise.name %></h3>
+					  <% end %>
+				</div>
+			<% end %>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

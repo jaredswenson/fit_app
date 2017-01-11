@@ -14,21 +14,25 @@
 				<% template.workouts.where(day_number: 2).each do |workout| %>
 				Day 2:
 					<%= workout.exercise.name %>
+					<br>
 				<% end %>
 				<br>
 				<% template.workouts.where(day_number: 3).each do |workout| %>
 				Day 3:
 					<%= workout.exercise.name %>
+					<br>
 				<% end %>
 				<br>
 				<% template.workouts.where(day_number: 4).each do |workout| %>
 				Day 4:
 					<%= workout.exercise.name %>
+					<br>
 				<% end %>
 				<br>
 				<% template.workouts.where(day_number: 5).each do |workout| %>
 				Day 5:
 					<%= workout.exercise.name %>
+					<br>
 				<% end %>
 			</div>
 		<% end %>

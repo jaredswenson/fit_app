@@ -13,18 +13,16 @@
   <body>
   <header>
     <% if athlete_signed_in? %>
-      <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "headbtns" %>
-      <%= link_to "Edit Account",  edit_athlete_registration_path, class: "headbtns"  %>
+      <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "btn", id: "headbtn" %>
     <% elsif trainer_signed_in? %>
-      <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "headbtns" %>
-      <%= link_to "Edit Account",  edit_trainer_registration_path, class: "headbtns"  %>
-      <%= link_to "Create New Exercise",  exercise_new_path, class: "headbtns"  %>
-      <%= link_to "Create New Template",  new_template_path, class: "headbtns"  %>
+      <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "btn", id: "headbtn" %>
+      <%= link_to "Edit Account",  edit_trainer_registration_path, class: "btn", id: "headbtn"  %>
+      <%= link_to "Create New Exercise",  exercise_new_path, class: "btn", id: "headbtn"  %>
+      <%= link_to "Create New Template",  new_template_path, class: "btn", id: "headbtn"  %>
     <% else %>
-      <%= link_to "Sign In",  new_athlete_session_path, class: "headbtns"  %>
-      <%= link_to "Trainer Sign In",  new_trainer_session_path, class: "headbtns"  %>
-      <%= link_to "Create Account",  new_athlete_registration_path, class: "headbtns"  %>
-    <% end %>
+      
+      <%= link_to "Trainer Sign In",  new_trainer_session_path, class: "btn", id: "trainerbtn"  %>
+          <% end %>
   </header>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
