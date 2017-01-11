@@ -14,7 +14,7 @@ class TemplatesController < ApplicationController
     @template = Template.new(template_params)
     if @template.save
       params[:exercises].each do |day, id|
-       @template.workouts.create(day_number: day, exercise_id: id)
+       @template.workouts.create(day_number: day.split(/: */)[1].to_i, exercise_id: id)
       end
       redirect_to templates_path
     else
