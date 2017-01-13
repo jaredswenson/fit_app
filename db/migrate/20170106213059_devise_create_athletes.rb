@@ -34,15 +34,19 @@ class DeviseCreateAthletes < ActiveRecord::Migration[5.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
       t.references :trainer
-      t.string :height
+      t.integer :height
       t.integer :weight
-      t.date :birthday
+      t.integer :age
       t.string :body_fat
       t.string :goal
       t.integer :days_per_week
       t.integer :goal_weight
       t.string :gender
       t.references :template
+      t.integer  :calories
+      t.integer  :carbs
+      t.integer  :protein
+      t.integer  :fats
 
       t.timestamps null: false
     end

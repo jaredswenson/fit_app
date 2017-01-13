@@ -3,6 +3,7 @@ class CreateWorkouts < ActiveRecord::Migration[5.0]
     create_table :workouts do |t|
     	t.references :exercise
     	t.references :template
+    	t.integer :day_number
     end
   end
 end

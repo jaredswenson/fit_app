@@ -7,11 +7,13 @@ class AthletesController < ApplicationController
   	@athlete = current_athlete
   	@athlete.update_attributes(athlete_params)
   	@athlete.assign_template
+  	@athlete.assign_calories
+  	@athlete.assign_macros
     redirect_to athlete_index_path
   end
 
   def index
-  	@athlete = current_athlete
+  	@athlete = current_athlete || Athlete.find(params[:id])
   	@template = @athlete.template
   	@workouts = @template.workouts
   	@template_exercises = {	}
@@ -24,12 +26,17 @@ class AthletesController < ApplicationController
   	puts @template_exercises.inspect
   end
 
+  def workout
+  	@athlete = current_athlete
+  	@template = Template.find(params[:template_id])
+  	@workouts = @template.workouts.where(day_number: params[:day])
+  	@logged_workout = LoggedWorkout.new
+  end
+
+
   private
 
   def athlete_params
-  	params.require(:athlete).permit(:gender, :height, :weight, :goal_weight, :body_fat, :goal, :days_per_week, :template_id)
+  	params.require(:athlete).permit(:gender, :age, :height, :weight, :goal_weight, :body_fat, :goal, :days_per_week, :template_id, :calories, :carbs, :protein, :fats)
   end
 end
-
-
-#template name, workouts, exercises in that workout

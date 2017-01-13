@@ -27,7 +27,7 @@ body{
 }
 
 .row{
-	margin: 1px;
+	margin: 3px;
 }
 
 
@@ -45,7 +45,14 @@ select{
 }
 
 #update{
+	background-color: #02A9F4;
 	float: left;
+	margin-bottom: 3%;
+}
+
+#update:hover{
+	background-color: white;
+	color: black;
 }
 
 .profile{

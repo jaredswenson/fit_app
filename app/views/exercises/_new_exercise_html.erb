@@ -1,0 +1,32 @@
+<%= form_for(:exercise, :url => new_exercise_path(:exercise)) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, ["Arms", "Legs", "Back", "Chest", "Core", "Shoulders"] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :primary_muscle %><br />
+    <%= f.text_field :primary_muscle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :secondary_muscle %><br />
+    <%= f.text_field :secondary_muscle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instruction %><br />
+    <%= f.text_area :instruction %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save", class: "btn" %>
+  </div>
+
+<% end %>

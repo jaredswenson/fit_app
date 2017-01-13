@@ -8,6 +8,7 @@
 	overflow: scroll;
 	border: 2px red solid;
 	float: left;
+	color: white;
 }
 
 #new_template{
@@ -24,13 +25,21 @@
 	height: auto;
 	background-color: red;
 	border-bottom: 1px black solid;
+	color: white;
 }
 
 .specific_exercise:hover{
-	background-color: gray;
+	background-color: white;
+	color: black;
 }
 
 .ui-draggable{
 	left: 1px!important;
 	top: 1px!important;
+}
+
+.wrapper{
+	width: 70%;
+	height: 700px;
+	margin: 0 auto;
 }

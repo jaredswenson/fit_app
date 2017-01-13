@@ -1,0 +1,57 @@
+<div class="dashboard">
+	<div class="row">
+		
+		<div class="trainer_card col-md-4" >
+			<h1> My Athletes </h1>
+			<% @athlete.each do |athlete| %>
+				<%= athlete.first_name %> <%= athlete.last_name %> 
+				<%= link_to('Visit Page', athlete_index_path(id: athlete.id), :class => "btn") %> 
+				<%= link_to "Send Message", "#", class: "btn start-conversation",
+                    "data-sid" => current_trainer.id, "data-rip" => athlete.id %> <br>
+			<% end %>
+		</div>
+
+		<div class="trainer_card col-md-4">
+			<h2>Create New Exercise</h2>
+			<%= form_for(@exercise) do |f| %>
+
+			  <div class="field">
+			    <%= f.label :name %><br />
+			    <%= f.text_field :name %>
+			  </div>
+
+			  <div class="field">
+			    <%= f.label :category %><br />
+			    <%= f.select :category, ["Arms", "Legs", "Back", "Chest", "Core", "Shoulders"] %>
+			  </div>
+
+			  <div class="field">
+			    <%= f.label :primary_muscle %><br />
+			    <%= f.text_field :primary_muscle %>
+			  </div>
+
+			  <div class="field">
+			    <%= f.label :secondary_muscle %><br />
+			    <%= f.text_field :secondary_muscle %>
+			  </div>
+
+			  <div class="field">
+			    <%= f.label :instruction %><br />
+			    <%= f.text_area :instruction, class: "loginput" %>
+			  </div>
+
+			  <div class="actions">
+			    <%= f.submit "Save", class: "btn" %>
+			  </div>
+
+			<% end %>
+		</div>
+
+
+	<div class="trainer_card col-md-4">
+		
+	</div>
+
+	
+</div>
+

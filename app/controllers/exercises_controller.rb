@@ -16,9 +16,9 @@ class ExercisesController < ApplicationController
   def create
     @exercise = Exercise.new(exercise_params)
     if @exercise.save
-      redirect_to exercises_path
+      redirect_to trainer_index_path
     else
-      redirect_to exercises_new_path
+      
     end
   end
 
@@ -26,6 +26,8 @@ class ExercisesController < ApplicationController
   end
 
   def destroy
+    Exercise.find(params[:id]).destroy
+    redirect_to trainer_index_path
   end
 
   private

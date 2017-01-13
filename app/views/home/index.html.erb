@@ -1,17 +1,24 @@
-<div id="video">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/mQxQXhcIJF4?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+<div class="homebackground">
+	
 </div>
 <div class="login">
-	<h2>Log in</h2>
-	<%= form_for(:athlete, :url => session_path(:athlete)) do |f| %>
-	  Email:<%= f.text_field :email %> <br>
-	  Password: <%= f.password_field :password %> <br>
-	  <%= f.check_box :remember_me %> 
-	  <%= f.label :remember_me %> <br>
-	  <%= f.submit 'Sign in', class: "btn" %>
-	  <%= link_to 'Create Account', new_athlete_registration_path, class: "btn"  %> <br>
-	  <%= link_to "Forgot your password?", new_password_path(:athlete)%>
+	<% if athlete_signed_in? %>
+		
+	<% else %>
+		<div class="loginform">
+		<h2>Log in</h2>
+		<%= form_for(:athlete, :url => session_path(:athlete)) do |f| %>
+		  <%= f.text_field :email, placeholder: "Email", id: "login" %> <br>
+		  <%= f.password_field :password, placeholder: "Password", id: "login" %> <br>
+		  <%= f.check_box :remember_me %> 
+		  <%= f.label :remember_me %> <br>
+		  <%= f.submit 'Sign in', class: "btn" %>
+		  <%= link_to 'Create Account', new_athlete_registration_path, class: "btn"  %> <br>
+		  <%= link_to "Forgot your password?", new_password_path(:athlete)%>
+		<% end %>
+	</div>
 	<% end %>
+	
 </div>
 
 

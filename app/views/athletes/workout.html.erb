@@ -1,0 +1,37 @@
+<% if @athlete.gender == "Female" %>
+	<div class="girllogbackground">
+	</div>
+<% else %>
+	<div class="logbackground">
+	</div>
+<% end %>
+
+<div class="form">
+	<div class="logform">
+		<h3>3 sets of <%= @athlete.rep_count %></h3>
+		<%= form_for @logged_workout  do |f| %>
+			<%  @workouts.each do |workout| %>
+				<div class="schedule">
+					<%= workout.exercise.name %> <br>
+					<div class="field">
+						<%= f.text_field :sets, placeholder: "Sets", name: "logged_workout[#{workout.exercise.name}[sets]]", class: "loginput"  %> <br>
+					</div>
+					<div class="field">
+				    	<%= f.text_field :rep_count, placeholder: "Reps", name: "logged_workout[#{workout.exercise.name}[rep_count]]", class: "loginput"  %> <br>
+				    </div>
+				    <div class="field">
+				    	<%= f.text_field :weight, placeholder: "Weight", name: "logged_workout[#{workout.exercise.name}[weight]]", class: "loginput" %> <br>
+				    </div>
+				    <div class="field">	
+	 			    	<%= f.text_area :comment, placeholder: "Comment", name: "logged_workout[#{workout.exercise.name}[comment]]", class: "loginput" %> <br>
+	 			    </div>
+	 			    <div class="field">
+	 			    	<%= hidden_field_tag( "logged_workout[#{workout.exercise.name}[athlete_id]]", @athlete.id) %>
+	 			    	<%= hidden_field_tag( "logged_workout[#{workout.exercise.name}[template_id]]", @athlete.template.id) %>
+	 			    </div>
+				</div>
+			<% end %> 
+			<%= f.submit "Save Workout", class: "btn" %>
+		<% end -%>
+	</div>
+</div>

@@ -5,22 +5,23 @@ class Athlete < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 		belongs_to :trainer
-		belongs_to :template
+		belongs_to :template, optional: true
+		has_many :logged_workouts
 
 	def rep_count
-		if gender == "Male" 
-			if goal == "Bulk"
+		if self.gender == "Male" 
+			if goal == "Build Muscle"
 				8
-			elsif goal == "fat loss"
-				12
+			elsif goal == "Lose Fat"
+				"12 <br><i>Super set if possible!</i>".html_safe 
 			else #goal == "transform"
 				10
 			end
 		else # this would be female
-			if goal == "Bulk"
+			if goal == "Build Muscle"
 				10
-			elsif goal == "fat loss"
-				15
+			elsif goal == "Lose Fat"
+				"15 <br><i>Super set if possible!</i>".html_safe 
 			else #goal == "transform"
 				12
 			end
@@ -37,4 +38,45 @@ class Athlete < ApplicationRecord
 		end
 		save
 	end
+
+	def assign_calories
+		if self.gender == "Female"
+			if self.goal == "Lose Fat"
+				self.calories = self.weight * 11
+			elsif self.goal == "Build Muscle"
+				self.calories = self.weight * 13
+			else
+				self.calories = self.weight * 12
+			end
+		else
+			if self.goal == "Lose Fat"
+				self.calories = self.weight * 12
+			elsif
+				self.calories = self.weight * 14
+			else
+				self.calories = self.weight * 13
+			end
+		end
+		save
+	end
+
+	def assign_macros
+		if self.goal == "Lose Fat"
+			self.carbs = self.weight * 0.75
+			self.protein = self.weight
+			self.fats = self.weight * 0.3
+
+		elsif self.goal == "Build Muscle"
+			self.carbs = self.weight * 1.2
+			self.protein = self.weight * 1.2
+			self.fats = self.weight * 0.5
+
+		else
+			self.carbs = self.weight
+			self.protein = self.weight
+			self.fats = self.weight * 0.4
+		end
+		save
+	end
+
 end
