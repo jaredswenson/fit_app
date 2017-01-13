@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :conversations do
+    resources :messages
+  end
+
   resources :exercises
   resources :templates
 
@@ -11,7 +15,13 @@ Rails.application.routes.draw do
 
   post 'exercises/new' => 'exercise#new', as: 'exercise_new'
 
-  get 'home/index'
+  get 'athletes/workout/:template_id' => 'athletes#workout', as: 'athletes_workout'
+
+  get 'loggedworkouts' => 'logged_workouts#create', as: 'log_workout'
+
+  post 'loggedworkouts' => 'logged_workouts#create', as: 'logged_workouts'
+
+  get 'trainers/index' => 'trainers#index', as: 'trainer_index'
 
   devise_for :athletes, controllers: {
         sessions: 'athletes/sessions',

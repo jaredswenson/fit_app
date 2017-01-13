@@ -3,29 +3,31 @@
   <head>
     <title>FitApp</title>
     <%= csrf_meta_tags %>
+    <meta content='<%= athlete_signed_in? ? current_athlete.id : "" %>' name='athlete-id'/>
+    <meta content='<%= trainer_signed_in? ? current_trainer.id : "" %>' name='trainer-id'/>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">Stripe.setPublishableKey('pk_test_WTakfhmlizgnbbBpokEoAmaG');</script>
   </head>
 
   <body>
   <header>
+    <h1 id="name">getFit</h1>
     <% if athlete_signed_in? %>
+      <%= link_to "Go To Dashboard", athlete_index_path, class: "btn", id: "headbtn" %>
       <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "btn", id: "headbtn" %>
     <% elsif trainer_signed_in? %>
       <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "btn", id: "headbtn" %>
-      <%= link_to "Edit Account",  edit_trainer_registration_path, class: "btn", id: "headbtn"  %>
-      <%= link_to "Create New Exercise",  exercise_new_path, class: "btn", id: "headbtn"  %>
+      <%= link_to "Back To Dashboard",  trainer_index_path, class: "btn", id: "headbtn"  %>
       <%= link_to "Create New Template",  new_template_path, class: "btn", id: "headbtn"  %>
     <% else %>
       
       <%= link_to "Trainer Sign In",  new_trainer_session_path, class: "btn", id: "trainerbtn"  %>
           <% end %>
   </header>
-  	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

@@ -1,12 +1,11 @@
 <div id="all_exercises">
 	<div class="categories">
-		<h1>ARMS</h1>
+		<h1>Arms</h1>
 		<% @exercises.where(category: "Arms").each do |exercise| %>
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
 				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
-				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
-				<p>Instruction: <%= exercise.instruction %></p>
+				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
 	</div>
@@ -17,8 +16,7 @@
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
 				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
-				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
-				<p>Instruction: <%= exercise.instruction %></p>
+				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
 	</div>
@@ -29,8 +27,7 @@
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
 				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
-				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
-				<p>Instruction: <%= exercise.instruction %></p>
+				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
 	</div>
@@ -41,8 +38,7 @@
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
 				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
-				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
-				<p>Instruction: <%= exercise.instruction %></p>
+				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
 	</div>
@@ -53,8 +49,7 @@
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
 				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
-				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
-				<p>Instruction: <%= exercise.instruction %></p>
+				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
 	</div>
@@ -65,8 +60,7 @@
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
 				<p>Primary Muscle: <%= exercise.primary_muscle%></p>
-				<p>Secondary Muscle: <%= exercise.secondary_muscle%></p>
-				<p>Instruction: <%= exercise.instruction %></p>
+				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
 	</div>
