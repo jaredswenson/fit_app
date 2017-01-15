@@ -17,7 +17,6 @@
   <header>
     <h1 id="name">getFit</h1>
     <% if athlete_signed_in? %>
-      <%= link_to "Go To Dashboard", athlete_index_path, class: "btn", id: "headbtn" %>
       <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "btn", id: "headbtn" %>
     <% elsif trainer_signed_in? %>
       <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "btn", id: "headbtn" %>

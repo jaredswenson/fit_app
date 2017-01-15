@@ -7,6 +7,8 @@ class Athlete < ApplicationRecord
 		belongs_to :trainer
 		belongs_to :template, optional: true
 		has_many :logged_workouts
+		has_many :questions
+		has_many :comments
 
 	def rep_count
 		if self.gender == "Male" 

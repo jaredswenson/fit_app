@@ -5,4 +5,5 @@ class Trainer < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 		has_many :athletes
+		has_many :comments
 end

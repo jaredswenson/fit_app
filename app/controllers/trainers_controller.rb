@@ -1,7 +1,8 @@
 class TrainersController < ApplicationController
 	def index
-		@athlete = Athlete.all
+		@athletes = Athlete.all
 		@exercises = Exercise.all
+		@templates = Template.all
 		@exercise = Exercise.new
 		@trainer = current_trainer
 	end
@@ -29,7 +30,7 @@ class TrainersController < ApplicationController
 
 	private
 
-  def trainer_params
-  	params.require(:trainer).permit(:email)
-  end
+	  def trainer_params
+	  	params.require(:trainer).permit(:email)
+	  end
 end

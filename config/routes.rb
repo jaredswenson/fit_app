@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :conversations do
-    resources :messages
-  end
-
   resources :exercises
   resources :templates
+  resources :questions
+  resources :comments
 
   get 'athletes/info' => 'athletes#info', as: 'athlete'
 
@@ -22,6 +20,8 @@ Rails.application.routes.draw do
   post 'loggedworkouts' => 'logged_workouts#create', as: 'logged_workouts'
 
   get 'trainers/index' => 'trainers#index', as: 'trainer_index'
+
+  get 'athletes/destroy' => 'athletes#destroy', as: 'athletes_destroy'
 
   devise_for :athletes, controllers: {
         sessions: 'athletes/sessions',

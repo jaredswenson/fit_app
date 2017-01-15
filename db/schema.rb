@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113185516) do
+ActiveRecord::Schema.define(version: 20170113234843) do
 
   create_table "athletes", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -49,13 +49,16 @@ ActiveRecord::Schema.define(version: 20170113185516) do
     t.index ["trainer_id"], name: "index_athletes_on_trainer_id"
   end
 
-  create_table "conversations", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer  "athlete_id"
     t.integer  "trainer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["athlete_id"], name: "index_conversations_on_athlete_id"
-    t.index ["trainer_id"], name: "index_conversations_on_trainer_id"
+    t.integer  "question_id"
+    t.string   "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["athlete_id"], name: "index_comments_on_athlete_id"
+    t.index ["question_id"], name: "index_comments_on_question_id"
+    t.index ["trainer_id"], name: "index_comments_on_trainer_id"
   end
 
   create_table "exercises", force: :cascade do |t|
@@ -81,12 +84,13 @@ ActiveRecord::Schema.define(version: 20170113185516) do
     t.index ["template_id"], name: "index_logged_workouts_on_template_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.integer  "conversation_id"
-    t.text     "content"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+  create_table "questions", force: :cascade do |t|
+    t.integer  "athlete_id"
+    t.string   "content"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "read",       default: false
+    t.index ["athlete_id"], name: "index_questions_on_athlete_id"
   end
 
   create_table "templates", force: :cascade do |t|

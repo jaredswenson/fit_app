@@ -14,11 +14,11 @@ WAITING ON API - monitor athletes nutrition logged-4
 
 ✓ receive comments from athlete workouts-5
 
-chat with athletes-5
+✓ chat with athletes-5
 
 assign athlete custom workout-7
 
-payment-6
+✓ payment-6
 
 
 
@@ -42,7 +42,7 @@ WAITING ON API - log nutrition daily-2.5
 
 ✓ finish workout(save workout and go back to dashboard)-3
 
-chat with trainer-5
+✓ chat with trainer-5
 
 
 

@@ -13,6 +13,9 @@ class AthletesController < ApplicationController
   end
 
   def index
+    @question = Question.new
+    @comment = Comment.new
+    @trainer = current_trainer
   	@athlete = current_athlete || Athlete.find(params[:id])
   	@template = @athlete.template
   	@workouts = @template.workouts
@@ -31,6 +34,11 @@ class AthletesController < ApplicationController
   	@template = Template.find(params[:template_id])
   	@workouts = @template.workouts.where(day_number: params[:day])
   	@logged_workout = LoggedWorkout.new
+  end
+
+  def destroy
+    Athlete.find(params[:id]).destroy
+    redirect_to home_index_path
   end
 
 
