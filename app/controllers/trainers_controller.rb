@@ -4,6 +4,7 @@ class TrainersController < ApplicationController
 		@exercises = Exercise.all
 		@templates = Template.all
 		@exercise = Exercise.new
+		@template = Template.new
 		@trainer = current_trainer
 	end
 

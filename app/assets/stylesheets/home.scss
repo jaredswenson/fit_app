@@ -4,27 +4,33 @@
 
 #all_exercises{
 	width: 100%;
-	height: auto;
+	height: 1010px;
 	overflow: scroll;
 	float: left;
 	color: white;
 }
 
 #new_template{
-	width: 33%;
-	height: 500px;
+	width: 100%;
 	overflow: scroll;
-	border: 2px red solid;
 	float: left;
 }
 
 .day{
 	width: 100%;
-	min-height: 300px;
-	height: auto;
-	background-color: red;
-	border-bottom: 1px black solid;
+	height: 200px;
+	border-bottom: 1px #02A9F4 solid;
 	color: white;
+	overflow: scroll;
+}
+
+hr{
+	background-color: #02A9F4;
+}
+
+.categories{
+	height: 228px;
+	overflow: scroll;
 }
 
 .specific_exercise:hover{
@@ -37,8 +43,3 @@
 	top: 1px!important;
 }
 
-.wrapper{
-	width: 70%;
-	height: 700px;
-	margin: 0 auto;
-}

@@ -8,7 +8,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     
   </head>
 
@@ -16,11 +17,11 @@
   <header id="header">
     <h1 id="name">getFit</h1>
     <% if athlete_signed_in? %>
-      <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "btn", id: "headbtn" %>
+      <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "btn headbtn"%>
     <% elsif trainer_signed_in? %>
-      <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "btn", id: "headbtn" %>
-      <%= link_to "Back To Dashboard",  trainer_index_path, class: "btn", id: "headbtn"  %>
-      <%= link_to "Create New Template",  new_template_path, class: "btn", id: "headbtn"  %>
+      <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "btn headbtn"%>
+      <%= link_to "Back To Dashboard",  trainer_index_path, class: "btn headbtn"%>
+      <button class="btn headbtn" id="templatebtn" >Create Template</button>
     <% else %>
       
       <%= link_to "Trainer Sign In",  new_trainer_session_path, class: "btn", id: "trainerbtn"  %>

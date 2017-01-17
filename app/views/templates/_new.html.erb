@@ -1,10 +1,9 @@
-<h1>Templates#new</h1>
-<p>Find me in app/views/templates/new.html.erb</p>
-<div class="wrapper">
-	<div class="templateform">
+<div class="row" id="newtemplateform">
+	<div class="templateform col-md-6">
 		<%= render 'exercises/all_exercises' %>
+	</div>
 
-		<div id="new_templates">
+		<div class="col-md-6" id="new_templates">
 			<%= form_for (@template), {:class => "template_form"}  do |f| %>
 
 			  <div class="field">
@@ -38,5 +37,4 @@
 
 			<% end %>
 		</div>
-	</div>
 </div>
