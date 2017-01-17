@@ -16,9 +16,9 @@ class TemplatesController < ApplicationController
       params[:exercises].each do |day, id|
        @template.workouts.create(day_number: day.split(/: */)[1].to_i, exercise_id: id)
       end
-      redirect_to templates_path
+      redirect_to trainer_index_path
     else
-      redirect_to template_new_path
+      redirect_to trainer_index_path
     end
   end
 

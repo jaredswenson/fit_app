@@ -48,6 +48,30 @@ $(document).on('turbolinks:load', function () {
 
 $('.row').show();
 
-});
+$( ".specific_exercise" ).draggable({
+      // helper: "clone", 
+      start: function () {
+          // $(this)
+          // console.log($(this));
+      }
+  });
+  $( ".day" ).droppable({
+    drop: function( event, ui ) {
+      $(this).append($(ui.draggable));
+      console.log($(this).data("day"));
+      $(this).append($('<input type="hidden" name="exercises[' + $(ui.draggable).attr("name") + ":" + $(this).data("day") + ']" value="' + $(ui.draggable).attr("value") + '">'));
+
+    }
+  });
+
+  $('#templatebtn').on('click', function () {
+    $('#templateform').fadeIn();
+    $('html, body').animate({
+      scrollTop: $('#templateform').offset().top
+    }, 2000);
+    })
+  });
+
+
 
 

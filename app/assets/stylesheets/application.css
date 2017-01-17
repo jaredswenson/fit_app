@@ -65,7 +65,7 @@ body{
 	display: inline;
 }
 
-#headbtn{
+.headbtn{
 	margin-top: 1%;
 	margin-right: 1%;
 	float: right;
@@ -242,3 +242,12 @@ select{
 	display: inline;
 }
 
+#templateform{
+	display: none;
+}
+
+#newtemplateform{
+	height: 1010px;
+	background-color: black;
+	color: white;
+}
