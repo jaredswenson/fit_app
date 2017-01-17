@@ -9,12 +9,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script type="text/javascript">Stripe.setPublishableKey('pk_test_WTakfhmlizgnbbBpokEoAmaG');</script>
+    
   </head>
 
   <body>
-  <header>
+  <header id="header">
     <h1 id="name">getFit</h1>
     <% if athlete_signed_in? %>
       <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "btn", id: "headbtn" %>

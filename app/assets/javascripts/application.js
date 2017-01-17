@@ -15,39 +15,39 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
-  var $form = $('#payment-form');
-  $form.submit(function(event) {
-    // Disable the submit button to prevent repeated clicks:
-    $form.find('.submit').prop('disabled', true);
-
-    // Request a token from Stripe:
-    Stripe.card.createToken($form, stripeResponseHandler);
-
-    // Prevent the form from being submitted:
-    return false;
-  });
+$(document).ready(function () {
+  $('.row').fadeIn(2500)
 });
 
-function stripeResponseHandler(status, response) {
-  // Grab the form:
-  var $form = $('#payment-form');
 
-  if (response.error) { // Problem!
+$(document).on('turbolinks:load', function () {
+  $('.homebackground').animate({'top' : '150px'},1000);
+  $('.appinfo').animate({'bottom' : '150px'},1000)
+  $('#homelogin').animate({'top' : '135px'},1700);
+  $('.homebackground').animate({'top' : '90px'},1000);
+  $('.appinfo').animate({'bottom' : '90px'},1000);
+  
 
-    // Show the errors on the form:
-    $form.find('.payment-errors').text(response.error.message);
-    $form.find('.submit').prop('disabled', false); // Re-enable submission
+  $('#createbtn').on('click', function (e) {
+    e.preventDefault();
+    $('#homelogin').fadeOut(500);
+    $('.homebackground').animate({'top' : '-1000px'},1000); 
+    var $self = $(this);
+    $('.appinfo').animate({'bottom' : '-1000px'}, 1000, function () {
+      document.location = $self.attr('href');
+      });
+  });
+  $('.createbackground').animate({'left' : '15px'}, 1500);
+  $('.new_athlete').show("explode", { pieces: 20 }, 2000); 
 
-  } else { // Token was created!
+  $('#signin').on('click', function (e) {
+    $('#homelogin').fadeOut(500);
+    $('.homebackground').animate({'top' : '2000px'}, 1000);
+    $('.appinfo').animate({'top' : '-1000px'}, 1000);
+  });
 
-    // Get the token ID:
-    var token = response.id;
+$('.row').show();
 
-    // Insert the token ID into the form so it gets submitted to the server:
-    $form.append($('<input type="hidden" name="stripeToken">').val(token));
+});
 
-    // Submit the form:
-    $form.get(0).submit();
-  }
-};
+

@@ -12,8 +12,8 @@
 		  <%= f.password_field :password, placeholder: "Password", id: "login" %> <br>
 		  <%= f.check_box :remember_me %> 
 		  <%= f.label :remember_me %> <br>
-		  <%= f.submit 'Sign in', class: "btn" %>
-		  <%= link_to 'Create Account', new_athlete_registration_path, class: "btn"  %> <br>
+		  <%= f.submit 'Sign in', class: "btn", id: "signin" %>
+		  <%= link_to 'Create Account', new_athlete_registration_path, class: "btn", id: "createbtn"  %> <br>
 		  <%= link_to "Forgot your password?", new_password_path(:athlete)%>
 		<% end %>
 	</div>

@@ -40,6 +40,7 @@
             logged_workouts POST   /loggedworkouts(.:format)                logged_workouts#create
               trainer_index GET    /trainers/index(.:format)                trainers#index
            athletes_destroy GET    /athletes/destroy(.:format)              athletes#destroy
+              athletes_info PATCH  /athletes/info/:template_id(.:format)    athletes#info
         new_athlete_session GET    /athletes/sign_in(.:format)              athletes/sessions#new
             athlete_session POST   /athletes/sign_in(.:format)              athletes/sessions#create
     destroy_athlete_session DELETE /athletes/sign_out(.:format)             athletes/sessions#destroy

@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   get 'athletes/destroy' => 'athletes#destroy', as: 'athletes_destroy'
 
+  patch 'athletes/info/:template_id' => 'athletes#info', as: 'athletes_info'
+
   devise_for :athletes, controllers: {
         sessions: 'athletes/sessions',
         registrations: 'athletes/registrations'
