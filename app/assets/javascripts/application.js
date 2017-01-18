@@ -119,4 +119,24 @@ $(document).on('turbolinks:load', function () {
 
 
 
+// function to change background image randomly
+function randomImage(){
+var randomNumber = Math.floor((Math.random() * 100) + 1);
+
+    if (randomNumber >= 1 && randomNumber <= 25) {
+        $('.homebackground')[0].style.backgroundImage = "url('assets/bench.jpg')";
+  }else if(randomNumber >= 26 && randomNumber <= 50){
+        $('.homebackground')[0].style.backgroundImage = "url('assets/girlrow.jpg')";
+  }else if(randomNumber >= 51 && randomNumber <= 75){
+        $('.homebackground')[0].style.backgroundImage = "url('assets/guybackground.jpg')";
+  }else if(randomNumber >= 76 && randomNumber <= 100){
+        $('.homebackground')[0].style.backgroundImage = "url('assets/girlflys.jpg')";
+  }     
+
+
+}// end of randomImage function
+
+setInterval(randomImage, 2000); //interval for randomImage funtion
+
+
 
