@@ -3,9 +3,11 @@
 </div>
 <div class="login" id="homelogin" >
 	<% if athlete_signed_in? %>
-		<%= link_to "Go To Dashboard",  athlete_index_path, class: "btn", id: "headbtn"  %>
+		<%= link_to "Go To Dashboard",  athlete_index_path, class: "btn headbtn"  %>
+	<% elsif trainer_signed_in? %>
+		<%= link_to "Go To Dashboard",  trainer_index_path, class: "btn headbtn"  %>
 	<% else %>
-		<div class="loginform">
+	<div class="loginform">
 		<h2>Log in</h2>
 		<%= form_for(:athlete, :url => session_path(:athlete)) do |f| %>
 		  <%= f.text_field :email, placeholder: "Email", id: "login" %> <br>

@@ -16,10 +16,11 @@
 //= require_tree .
 
 $(document).ready(function () {
-  $('.row').fadeIn(2500)
+  $('.row').fadeIn(2500); //fade .row in just on page load.
+  $('.headbtn').fadeIn(1500);
 });
 
-
+// animations for the home screen.
 $(document).on('turbolinks:load', function () {
   $('.homebackground').animate({'top' : '150px'},1000);
   $('.appinfo').animate({'bottom' : '150px'},1000)
@@ -27,8 +28,28 @@ $(document).on('turbolinks:load', function () {
   $('.homebackground').animate({'top' : '90px'},1000);
   $('.appinfo').animate({'bottom' : '90px'},1000);
   
-
+  // hide home screen divs when create account button is clicked
   $('#createbtn').on('click', function (e) {
+    e.preventDefault(); //prevent form from submitting to run animations
+    $('#homelogin').fadeOut(500);
+    $('.homebackground').animate({'top' : '-1000px'},1000); 
+    var $self = $(this);
+    $('.appinfo').animate({'bottom' : '-1000px'}, 1000, function () {
+      document.location = $self.attr('href'); //change doc location to button location
+      });
+  });
+  $('.createbackground').animate({'left' : '15px'}, 1500); //bring in new background
+  $('.new_athlete').show("explode", { pieces: 20 }, 2000); //bring in new form
+
+  // hide home screen divs when sign in completed
+  $('#signin').on('click', function () {
+    $('#homelogin').fadeOut(500); 
+    $('.homebackground').animate({'top' : '2000px'}, 1000);
+    $('.appinfo').animate({'top' : '-1000px'}, 1000);
+  });
+
+  // hide home screen divs when trainer sign in button is clicked
+  $('#trainerbtn').on('click', function (e) {
     e.preventDefault();
     $('#homelogin').fadeOut(500);
     $('.homebackground').animate({'top' : '-1000px'},1000); 
@@ -37,17 +58,19 @@ $(document).on('turbolinks:load', function () {
       document.location = $self.attr('href');
       });
   });
-  $('.createbackground').animate({'left' : '15px'}, 1500);
-  $('.new_athlete').show("explode", { pieces: 20 }, 2000); 
+   $('.updatebackground').fadeIn(1500); // bring in new background
+   $('.loginform').fadeIn(2000); // bring in trainer login form
 
-  $('#signin').on('click', function (e) {
-    $('#homelogin').fadeOut(500);
-    $('.homebackground').animate({'top' : '2000px'}, 1000);
-    $('.appinfo').animate({'top' : '-1000px'}, 1000);
-  });
+// fade divs out when trainer signs in
+$('#trainerlogin').on('click', function () {
+  $('.updatebackground').fadeOut(500);
+  $('.loginform').fadeOut(500);
+})
 
+// show .row anytime you visit a page with that div
 $('.row').show();
 
+// start of draggable and droppable functions
 $( ".specific_exercise" ).draggable({
       // helper: "clone", 
       start: function () {
@@ -57,32 +80,35 @@ $( ".specific_exercise" ).draggable({
   $( ".day" ).droppable({
     drop: function( event, ui ) {
       $(this).append($(ui.draggable));
-      console.log($(this).data("day"));
       $(this).append($('<input type="hidden" name="exercises[' + $(ui.draggable).attr("name") + ":" + $(this).data("day") + ']" value="' + $(ui.draggable).attr("value") + '">'));
 
     }
-  });
+  });//end of draggable and droppable function
 
+  // show template form on trainer page, and scroll down to that div
   $('#templatebtn').on('click', function () {
-    $('#exerciseform').hide();
+    $('#exerciseform').hide(); //hide exerciseform if it is open and opening templateform
     $('#templateform').fadeIn();
     $('html, body').animate({
       scrollTop: $('#templateform').offset().top -80
     }, 2000);
     });
 
+  // show exercises on trainer page and scroll down to that div
   $('#exercisebtn').on('click', function () {
-    $('#templateform').hide();
+    $('#templateform').hide(); //hide templateform if it is open when opening exerciseform
     $('#exerciseform').fadeIn();
     $('html, body').animate({
       scrollTop: $('#exerciseform').offset().top -80
     }, 2000);
     });
 
+  //exit button for templateform and exerciseform
   $('.exit').on('click', function () {
     $('.hiddendivs').hide();
   });
 
+  //escape key to close templateform and exerciseform
   $(document).keyup(function(e) {
      if (e.keyCode == 27) { 
       $('.hiddendivs').hide();
