@@ -14,57 +14,76 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+var extraslowspeed = 2500
+var slowspeed = 2000
+var mediumspeed = 1500
+var fastspeed = 1000
+var extrafastspeed = 500
 
 $(document).ready(function () {
-  $('.row').fadeIn(2500); //fade .row in just on page load.
-  $('.headbtn').fadeIn(1500);
+  $('.row').fadeIn(extraslowspeed); //fade .row in just on page load.
+  $('.headbtn').fadeIn(mediumspeed);
+   // function to change background image randomly
 });
 
 // animations for the home screen.
 $(document).on('turbolinks:load', function () {
-  $('.homebackground').animate({'top' : '150px'},1000);
-  $('.appinfo').animate({'bottom' : '150px'},1000)
-  $('#homelogin').animate({'top' : '135px'},1700);
-  $('.homebackground').animate({'top' : '90px'},1000);
-  $('.appinfo').animate({'bottom' : '90px'},1000);
+  $('.homebackground').animate({'top' : '150px'},fastspeed);
+  $('.appinfo').animate({'bottom' : '150px'},fastspeed)
+  $('#homelogin').animate({'top' : '135px'},mediumspeed);
+  $('.homebackground').animate({'top' : '90px'},fastspeed);
+  $('.appinfo').animate({'bottom' : '-300px'},fastspeed);
   
   // hide home screen divs when create account button is clicked
   $('#createbtn').on('click', function (e) {
     e.preventDefault(); //prevent form from submitting to run animations
-    $('#homelogin').fadeOut(500);
-    $('.homebackground').animate({'top' : '-1000px'},1000); 
+    $('#homelogin').fadeOut(extrafastspeed);
+    $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
-    $('.appinfo').animate({'bottom' : '-1000px'}, 1000, function () {
+    $('.appinfo').animate({'bottom' : '-2000'}, fastspeed, function () {
       document.location = $self.attr('href'); //change doc location to button location
       });
   });
-  $('.createbackground').animate({'left' : '15px'}, 1500); //bring in new background
-  $('.new_athlete').show("explode", { pieces: 20 }, 2000); //bring in new form
+  $('.createbackground').animate({'left' : '15px'}, mediumspeed); //bring in new background
+  $('.new_athlete').show("explode", { pieces: 20 }, slowspeed); //bring in new form
 
   // hide home screen divs when sign in completed
   $('#signin').on('click', function () {
-    $('#homelogin').fadeOut(500); 
-    $('.homebackground').animate({'top' : '2000px'}, 1000);
-    $('.appinfo').animate({'top' : '-1000px'}, 1000);
+    $('#homelogin').fadeOut(extrafastspeed); 
+    $('.homebackground').animate({'top' : '2000px'}, fastspeed);
+    $('.appinfo').animate({'top' : '-2000'}, fastspeed);
   });
 
   // hide home screen divs when trainer sign in button is clicked
   $('#trainerbtn').on('click', function (e) {
     e.preventDefault();
-    $('#homelogin').fadeOut(500);
-    $('.homebackground').animate({'top' : '-1000px'},1000); 
+    $('#homelogin').fadeOut(extrafastspeed);
+    $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
-    $('.appinfo').animate({'bottom' : '-1000px'}, 1000, function () {
+    $('.appinfo').animate({'bottom' : '-2000'}, fastspeed, function () {
       document.location = $self.attr('href');
       });
   });
-   $('.updatebackground').fadeIn(1500); // bring in new background
-   $('.loginform').fadeIn(2000); // bring in trainer login form
+   $('.updatebackground').fadeIn(mediumspeed); // bring in new background
+   $('.loginform').fadeIn(slowspeed); // bring in trainer login form
+
+   // hide create account screen divs when trainer sign in button is clicked
+  $('#trainerbtn').on('click', function (e) {
+    e.preventDefault();
+    $('#new_athlete').fadeOut(extrafastspeed);
+    $('.createbackground').animate({'top' : '-1000px'},fastspeed); 
+    var $self = $(this);
+    $('.appinfo').animate({'bottom' : '-2000'}, fastspeed, function () {
+      document.location = $self.attr('href');
+      });
+  });
+   $('.updatebackground').fadeIn(mediumspeed); // bring in new background
+   $('.loginform').fadeIn(slowspeed); // bring in trainer login form
 
   // fade divs out when trainer signs in
   $('#trainerlogin').on('click', function () {
-    $('.updatebackground').fadeOut(500);
-    $('.loginform').fadeOut(500);
+    $('.loginform').fadeOut(extrafastspeed);
+    $('.updatebackground').fadeOut(extrafastspeed);
   });
 
   // show .row anytime you visit a page with that div
@@ -91,16 +110,16 @@ $(document).on('turbolinks:load', function () {
     $('#templateform').fadeIn();
     $('html, body').animate({
       scrollTop: $('#templateform').offset().top -80
-    }, 2000);
+    }, slowspeed);
     });
 
   // show exercises on trainer page and scroll down to that div
   $('#exercisebtn').on('click', function () {
-    $('#templateform').hide(); //hide templateform if it is open when opening exerciseform
+    $('#templateform').hide();//hide templateform if it is open when opening exerciseform
     $('#exerciseform').fadeIn();
     $('html, body').animate({
       scrollTop: $('#exerciseform').offset().top -80
-    }, 2000);
+    }, slowspeed);
     });
 
   //exit button for templateform and exerciseform
@@ -119,24 +138,6 @@ $(document).on('turbolinks:load', function () {
 
 
 
-// function to change background image randomly
-function randomImage(){
-var randomNumber = Math.floor((Math.random() * 4) + 1);
-
-    if (randomNumber == 1 ) {
-        $('.homebackground')[0].style.backgroundImage = "url('assets/bench.jpg')";
-  }else if(randomNumber == 2){
-        $('.homebackground')[0].style.backgroundImage = "url('assets/girlrow.jpg')";
-  }else if(randomNumber == 3){
-        $('.homebackground')[0].style.backgroundImage = "url('assets/guybackground.jpg')";
-  }else if(randomNumber == 4){
-        $('.homebackground')[0].style.backgroundImage = "url('assets/girlflys.jpg')";
-  }     
-
-
-}// end of randomImage function
-
-setInterval(randomImage, 5000); //interval for randomImage function
 
 
 
