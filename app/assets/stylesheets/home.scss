@@ -4,10 +4,11 @@
 
 #all_exercises{
 	width: 100%;
-	height: 1010px;
+	height: 1120px;
 	overflow: scroll;
 	float: left;
 	color: white;
+	background-color: black;
 }
 
 #new_template{
@@ -22,10 +23,6 @@
 	border-bottom: 1px #02A9F4 solid;
 	color: white;
 	overflow: scroll;
-}
-
-hr{
-	background-color: #02A9F4;
 }
 
 .categories{

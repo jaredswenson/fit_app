@@ -24,6 +24,9 @@ body{
 	height: 70px;
 	background-color: black;
 	box-shadow: 0px 8px 5px white;
+	position: fixed;
+	top: 0;
+	z-index: 999;
 }
 
 .btn{
@@ -222,6 +225,10 @@ body{
 	display: none;
 }
 
+.dashboard{
+	margin-top: 8%;
+}
+
 .loginput{
 	color: black;
 }
@@ -234,8 +241,6 @@ select{
 #templatebtn{
 	width: auto;
 	height: auto;
-
-
 }
 
 #templatename{
@@ -247,7 +252,29 @@ select{
 }
 
 #newtemplateform{
-	height: 1010px;
+	height: 1120px;
 	background-color: black;
+	color: white;
+}
+
+#template_name{
+	background-color: white;
+}
+
+#exerciseform{
+	display: none;
+}
+
+.exit{
+	position: absolute;
+    right: 40px;
+    background-color: black;
+    color: white;
+    top: 755px;
+    z-index: 1;
+}
+
+.exit:hover{
+	background-color: #02A9F4;
 	color: white;
 }

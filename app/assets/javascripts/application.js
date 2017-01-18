@@ -51,8 +51,7 @@ $('.row').show();
 $( ".specific_exercise" ).draggable({
       // helper: "clone", 
       start: function () {
-          // $(this)
-          // console.log($(this));
+          
       }
   });
   $( ".day" ).droppable({
@@ -65,11 +64,32 @@ $( ".specific_exercise" ).draggable({
   });
 
   $('#templatebtn').on('click', function () {
+    $('#exerciseform').hide();
     $('#templateform').fadeIn();
     $('html, body').animate({
-      scrollTop: $('#templateform').offset().top
+      scrollTop: $('#templateform').offset().top -80
     }, 2000);
-    })
+    });
+
+  $('#exercisebtn').on('click', function () {
+    $('#templateform').hide();
+    $('#exerciseform').fadeIn();
+    $('html, body').animate({
+      scrollTop: $('#exerciseform').offset().top -80
+    }, 2000);
+    });
+
+  $('.exit').on('click', function () {
+    $('.hiddendivs').hide();
+  });
+
+  $(document).keyup(function(e) {
+     if (e.keyCode == 27) { 
+      $('.hiddendivs').hide();
+    }
+});
+
+
   });
 
 

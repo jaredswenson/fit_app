@@ -22,6 +22,7 @@
       <%= link_to "Sign Out",  destroy_trainer_session_path, method: :delete, class: "btn headbtn"%>
       <%= link_to "Back To Dashboard",  trainer_index_path, class: "btn headbtn"%>
       <button class="btn headbtn" id="templatebtn" >Create Template</button>
+      <button class="btn headbtn" id="exercisebtn" >All Exercises</button>
     <% else %>
       
       <%= link_to "Trainer Sign In",  new_trainer_session_path, class: "btn", id: "trainerbtn"  %>
