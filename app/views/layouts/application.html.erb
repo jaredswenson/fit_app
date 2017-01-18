@@ -15,7 +15,7 @@
 
   <body>
   <header id="header">
-    <h1 id="name">getFit</h1>
+    <h1 id="name"><%= link_to "getFit", root_path %></h1>
     <% if athlete_signed_in? %>
       <%= link_to "Sign Out",  destroy_athlete_session_path, method: :delete, class: "btn headbtn"%>
     <% elsif trainer_signed_in? %>

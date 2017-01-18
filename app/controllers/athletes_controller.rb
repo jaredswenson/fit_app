@@ -9,6 +9,12 @@ class AthletesController < ApplicationController
   	@athlete.assign_template
   	@athlete.assign_calories
   	@athlete.assign_macros
+
+    if @athlete.template_id == nil
+      @athlete.template.id = 1
+    else
+      
+    end
     redirect_to athlete_index_path
   end
 
@@ -17,6 +23,11 @@ class AthletesController < ApplicationController
     @comment = Comment.new
     @trainer = current_trainer
   	@athlete = current_athlete || Athlete.find(params[:id])
+    if @athlete.template_id == nil
+      @athlete.template_id = 1
+    else
+      
+    end
   	@template = @athlete.template
   	@workouts = @template.workouts
   	@template_exercises = {	}
@@ -26,7 +37,6 @@ class AthletesController < ApplicationController
   	@workouts.each do |workout|
   		@template_exercises[workout.day_number.to_s.to_sym] << workout.exercise
   	end
-  	puts @template_exercises.inspect
   end
 
   def workout

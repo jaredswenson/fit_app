@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
   def create
      @commenter = current_trainer || current_athlete
      @comment = @commenter.comments.new(comment_params)
-    if @comment.save!
+    if @comment.save! && @commenter == current_trainer
       @comment.question.update_attribute(:read, true)
     else
       
