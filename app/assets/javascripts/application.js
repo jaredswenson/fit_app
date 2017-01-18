@@ -61,19 +61,19 @@ $(document).on('turbolinks:load', function () {
    $('.updatebackground').fadeIn(1500); // bring in new background
    $('.loginform').fadeIn(2000); // bring in trainer login form
 
-// fade divs out when trainer signs in
-$('#trainerlogin').on('click', function () {
-  $('.updatebackground').fadeOut(500);
-  $('.loginform').fadeOut(500);
-})
+  // fade divs out when trainer signs in
+  $('#trainerlogin').on('click', function () {
+    $('.updatebackground').fadeOut(500);
+    $('.loginform').fadeOut(500);
+  });
 
-// show .row anytime you visit a page with that div
-$('.row').show();
+  // show .row anytime you visit a page with that div
+  $('.row').show();
 
-// start of draggable and droppable functions
-$( ".specific_exercise" ).draggable({
-      // helper: "clone", 
-      start: function () {
+  // start of draggable and droppable functions
+  $( ".specific_exercise" ).draggable({
+        // helper: "clone", 
+        start: function () {
           
       }
   });
@@ -113,10 +113,9 @@ $( ".specific_exercise" ).draggable({
      if (e.keyCode == 27) { 
       $('.hiddendivs').hide();
     }
-});
-
-
   });
+
+});
 
 
 
