@@ -72,7 +72,7 @@ $(document).on('turbolinks:load', function () {
 
   // start of draggable and droppable functions
   $( ".specific_exercise" ).draggable({
-        // helper: "clone", 
+        helper: "clone", 
         start: function () {
           
       }
@@ -121,22 +121,23 @@ $(document).on('turbolinks:load', function () {
 
 // function to change background image randomly
 function randomImage(){
-var randomNumber = Math.floor((Math.random() * 100) + 1);
+var randomNumber = Math.floor((Math.random() * 4) + 1);
 
-    if (randomNumber >= 1 && randomNumber <= 25) {
+    if (randomNumber == 1 ) {
         $('.homebackground')[0].style.backgroundImage = "url('assets/bench.jpg')";
-  }else if(randomNumber >= 26 && randomNumber <= 50){
+  }else if(randomNumber == 2){
         $('.homebackground')[0].style.backgroundImage = "url('assets/girlrow.jpg')";
-  }else if(randomNumber >= 51 && randomNumber <= 75){
+  }else if(randomNumber == 3){
         $('.homebackground')[0].style.backgroundImage = "url('assets/guybackground.jpg')";
-  }else if(randomNumber >= 76 && randomNumber <= 100){
+  }else if(randomNumber == 4){
         $('.homebackground')[0].style.backgroundImage = "url('assets/girlflys.jpg')";
   }     
 
 
 }// end of randomImage function
 
-setInterval(randomImage, 2000); //interval for randomImage funtion
+setInterval(randomImage, 5000); //interval for randomImage function
+
 
 
 
