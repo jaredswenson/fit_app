@@ -200,14 +200,14 @@
 
 			<div class="card col-md-4">
 			<h1>Logged Workouts</h1>
-				<% @athlete.logged_workouts.each do |logged_workout| %>
-					<% logged_workout.template.exercises.each do |exercise| %>
-						<%= exercise.name %> <br>
-						Sets: <%= logged_workout.sets %>
-						Reps: <%= logged_workout.rep_count %>
-						Weight: <%= logged_workout.weight %> <br>
-						<%= logged_workout.comment %>
-					<% end %>
+				<% @athlete.last_seven_days.each do |logged_workout| %>
+					<%= time_ago_in_words(logged_workout.created_at) %> ago <br>
+					<%= logged_workout.exercise.name %> <br>
+					Sets: <%= logged_workout.sets %>
+					Reps: <%= logged_workout.rep_count %>
+					Weight: <%= logged_workout.weight %> <br>
+					<%= logged_workout.comment %>
+					<hr>
 				<% end %>
 			</div>
 		</div>
