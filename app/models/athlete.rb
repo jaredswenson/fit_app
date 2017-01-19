@@ -81,4 +81,8 @@ class Athlete < ApplicationRecord
 		save
 	end
 
+	def last_seven_days
+		self.logged_workouts.where("created_at >= ?", Time.now - 7.days)
+	end
+
 end

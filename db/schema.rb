@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113234843) do
+ActiveRecord::Schema.define(version: 20170118231852) do
 
   create_table "athletes", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -80,7 +80,9 @@ ActiveRecord::Schema.define(version: 20170113234843) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.text     "comment"
+    t.integer  "exercise_id"
     t.index ["athlete_id"], name: "index_logged_workouts_on_athlete_id"
+    t.index ["exercise_id"], name: "index_logged_workouts_on_exercise_id"
     t.index ["template_id"], name: "index_logged_workouts_on_template_id"
   end
 

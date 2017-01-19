@@ -71,11 +71,11 @@ $(document).on('turbolinks:load', function () {
   $('#trainerbtn').on('click', function (e) {
     e.preventDefault();
     $('#new_athlete').fadeOut(extrafastspeed);
-    $('.createbackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
-    $('.appinfo').animate({'bottom' : '-2000'}, fastspeed, function () {
+    $('.createbackground').animate({'top' : '-1000px'},fastspeed, function () {
       document.location = $self.attr('href');
-      });
+    }); 
+    
   });
    $('.updatebackground').fadeIn(mediumspeed); // bring in new background
    $('.loginform').fadeIn(slowspeed); // bring in trainer login form

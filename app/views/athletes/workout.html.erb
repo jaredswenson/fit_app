@@ -28,6 +28,7 @@
 	 			    <div class="field">
 	 			    	<%= hidden_field_tag( "logged_workout[#{workout.exercise.name}[athlete_id]]", @athlete.id) %>
 	 			    	<%= hidden_field_tag( "logged_workout[#{workout.exercise.name}[template_id]]", @athlete.template.id) %>
+	 			    	<%= hidden_field_tag( "logged_workout[#{workout.exercise.name}[exercise_id]]", workout.exercise.id) %>
 	 			    </div>
 				</div>
 			<% end %> 
