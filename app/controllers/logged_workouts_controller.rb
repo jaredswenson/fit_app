@@ -10,6 +10,6 @@ class LoggedWorkoutsController < ApplicationController
 
 	private
   def workout_params
-    params.require(:logged_workout).permit(:sets, :rep_count, :weight, :comment, :athlete_id, :template_id)
+    params.require(:logged_workout).permit(:sets, :rep_count, :weight, :comment, :athlete_id, :template_id, :exercise_id)
   end
 end

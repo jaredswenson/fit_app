@@ -165,7 +165,7 @@ body{
 	width: 98%;
 	height: 600px;
 	margin: 5% auto;
-	background: url('/assets/dumbells.jpg');
+	/*background: url('/assets/dumbells.jpg');*/
 	border-radius: 10px;
 	position:absolute;top:100;left:-2500px;
 }
@@ -176,7 +176,7 @@ body{
 	width: 98%;
 	height: 600px;
 	margin: 5% auto;
-	background: url('/assets/hatedtraining.jpg');
+	/*background: url('/assets/hatedtraining.jpg');*/
 	background-size: cover;
 	border-radius: 10px;
 	display: none;
@@ -195,7 +195,7 @@ body{
 	width: 98%;
 	height: 600px;
 	margin: 6% auto;
-	background: url('/assets/deadliftbw.jpg');
+	background: url('/assets/hatedtraining.jpg');
 	background-size: cover;
 	border-radius: 10px;
 }
@@ -203,11 +203,15 @@ body{
 .logform{
 	width: 300px;
 	margin: 0 auto;
-	background-color: rgba(165, 171, 172, .85);
+	background-color: rgba(0, 0, 0, .85);
 	color: white;
 	border-radius: 10px;
 	position: relative;
 	top: -600px;
+}
+
+.logform input{
+	color: white;
 }
 
 #infolog{
@@ -286,12 +290,3 @@ select{
 	color: white;
 }
 
-/*.filler{
-	width: 100%;
-	height: 500px;
-	background: url('/assets/bench.jpg');
-	background-size: cover;
-	position: absolute;
-	top: 750px; 
-	z-index: -1;
-}*/
