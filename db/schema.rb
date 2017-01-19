@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118231852) do
+ActiveRecord::Schema.define(version: 20170113224446) do
 
   create_table "athletes", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 20170118231852) do
     t.integer  "goal_weight"
     t.string   "gender"
     t.integer  "template_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.integer  "calories"
     t.integer  "carbs"
     t.integer  "protein"
     t.integer  "fats"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_athletes_on_email", unique: true
     t.index ["reset_password_token"], name: "index_athletes_on_reset_password_token", unique: true
     t.index ["template_id"], name: "index_athletes_on_template_id"
@@ -74,13 +74,13 @@ ActiveRecord::Schema.define(version: 20170118231852) do
   create_table "logged_workouts", force: :cascade do |t|
     t.integer  "athlete_id"
     t.integer  "template_id"
+    t.integer  "exercise_id"
     t.integer  "rep_count"
     t.integer  "sets"
     t.integer  "weight"
+    t.text     "comment"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.text     "comment"
-    t.integer  "exercise_id"
     t.index ["athlete_id"], name: "index_logged_workouts_on_athlete_id"
     t.index ["exercise_id"], name: "index_logged_workouts_on_exercise_id"
     t.index ["template_id"], name: "index_logged_workouts_on_template_id"
@@ -89,9 +89,9 @@ ActiveRecord::Schema.define(version: 20170118231852) do
   create_table "questions", force: :cascade do |t|
     t.integer  "athlete_id"
     t.string   "content"
+    t.boolean  "read",       default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.boolean  "read",       default: false
     t.index ["athlete_id"], name: "index_questions_on_athlete_id"
   end
 

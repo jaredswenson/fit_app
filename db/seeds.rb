@@ -71,7 +71,7 @@ lat_pulldown = Exercise.create(name: 'Lat Pulldown', category: "Back", primary_m
 	Pull the bar down towards your chest, keeping your elbows close to your sides as you come down. 
 	Pull your shoulders back at the end of the motion.")
 
-hyperextention = Exercise.create(name: 'Hyperextention', category: "Back", primary_muscle: "Traps", secondary_muscle: 'n/a', 
+hyperextension = Exercise.create(name: 'Hyperextension', category: "Back", primary_muscle: "Traps", secondary_muscle: 'n/a', 
 	instruction: "Lay on the hyperextension pad with the belly button just at the leading edge, the upper body can hang freely. 
 	Tense your whole back's muscles and bring your upper body up till it is horizontal, but not more. 
 	Go slowly down and don't relax your muscles.")
@@ -86,7 +86,7 @@ leg_curls = Exercise.create(name: 'Leg Curls', category: "Legs", primary_muscle:
 	Hold a grip on the bars to make sure the body is firmly in place. Bend your legs bringing the weight up, go slowly back. 
 	During the exercise the body should not move, all work is done by the legs.")
 
-leg_extensions = Exercise.create(name: 'Hyperextention', category: "Legs", primary_muscle: "Quads", secondary_muscle: 'n/a', 
+leg_extensions = Exercise.create(name: 'Hyperextension', category: "Legs", primary_muscle: "Quads", secondary_muscle: 'n/a', 
 	instruction: "Seated Leg Extension Machine")
 
 #shoulder exercises
@@ -94,11 +94,11 @@ shoulder_press = Exercise.create(name: 'Should Press', category: "Shoulders", pr
 	instruction: "Sit on a bench, the back rest should be almost vertical. Take a barbell with a shoulder wide grip and bring it up to chest height. 
 	Press the weight up, but don't stretch the arms completely. Go slowly down and repeat.")
 
-side_raises = Exercise.create(name: 'Should Press', category: "Shoulders", primary_muscle: "Shoulders", secondary_muscle: 'n/a', 
+side_raises = Exercise.create(name: 'Side Raises', category: "Shoulders", primary_muscle: "Shoulders", secondary_muscle: 'n/a', 
 	instruction: "Stand up or sit , keep both weights in front against legs or at side. Keep arms at around a 90 degree angle. 
 	Lift elbows up slowly and squeese traps when at topmost position. Lower the weights slowly back to starting position.")
 
-shrugs = Exercise.create(name: 'Should Press', category: "Shoulders", primary_muscle: "Shoulders", secondary_muscle: 'n/a', 
+shrugs = Exercise.create(name: 'Shrugs', category: "Shoulders", primary_muscle: "Shoulders", secondary_muscle: 'n/a', 
 	instruction: "Stand with straight body, the hands are hanging freely on the side and hold each a dumbbell. Lift from this position the shoulders 
 	as high as you can, but don't bend the arms during the movement. On the highest point, make a short pause of 1 or 2 seconds before returning 
 	slowly to the initial position.")
@@ -215,27 +215,3 @@ fiveday.workouts.create([
 	{ exercise_id: negative_crunches.id, day_number: 5},
 	{ exercise_id: hiit_cardio.id, day_number: 5}
 	])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -86,6 +86,19 @@ $(document).on('turbolinks:load', function () {
     $('.updatebackground').fadeOut(extrafastspeed);
   });
 
+  //go from signup page to more info page
+  $('#signup').on('click', function (e) {
+    $('#new_athlete').fadeOut();
+  });
+
+  //bring in more info
+  $('#edit_athlete').show("explode", { pieces: 20 }, slowspeed);
+
+  //fade out update form
+  $('#updatebtn').on('click', function () {
+    $('#edit_athlete').hide("explode", { pieces: 20}, extrafastspeed)
+  })
+
   // show .row anytime you visit a page with that div
   $('.row').show();
 
