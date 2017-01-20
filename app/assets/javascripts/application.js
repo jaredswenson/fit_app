@@ -96,7 +96,7 @@ $(document).on('turbolinks:load', function () {
 
   //fade out update form
   $('#updatebtn').on('click', function () {
-    $('#edit_athlete').hide("explode", { pieces: 20}, extrafastspeed)
+    $('#edit_athlete').hide("explode", { pieces: 20}, extrarfastspeed)
   })
 
   // show .row anytime you visit a page with that div

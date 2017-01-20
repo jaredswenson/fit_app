@@ -86,7 +86,7 @@ leg_curls = Exercise.create(name: 'Leg Curls', category: "Legs", primary_muscle:
 	Hold a grip on the bars to make sure the body is firmly in place. Bend your legs bringing the weight up, go slowly back. 
 	During the exercise the body should not move, all work is done by the legs.")
 
-leg_extensions = Exercise.create(name: 'Hyperextension', category: "Legs", primary_muscle: "Quads", secondary_muscle: 'n/a', 
+leg_extensions = Exercise.create(name: 'Leg Extensions', category: "Legs", primary_muscle: "Quads", secondary_muscle: 'n/a', 
 	instruction: "Seated Leg Extension Machine")
 
 #shoulder exercises
