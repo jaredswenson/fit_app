@@ -9,7 +9,6 @@ class AthletesController < ApplicationController
   	@athlete.assign_template
   	@athlete.assign_calories
   	@athlete.assign_macros
-
     if @athlete.template_id == nil
       @athlete.template.id = 1
     else
@@ -21,6 +20,7 @@ class AthletesController < ApplicationController
   def index
     @question = Question.new
     @comment = Comment.new
+    @exercises = Exercise.all
     @trainer = current_trainer
   	@athlete = current_athlete || Athlete.find(params[:id])
     if @athlete.template_id == nil
@@ -29,6 +29,7 @@ class AthletesController < ApplicationController
       
     end
   	@template = @athlete.template
+    @new_template = Template.new
   	@workouts = @template.workouts
   	@template_exercises = {	}
   	@workouts.each do |workout|

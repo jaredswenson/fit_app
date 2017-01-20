@@ -63,7 +63,7 @@
 	<div class="trainer_card col-md-3">
 	<h1>All Templates</h1>
 	<% @templates.each do |template| %>		
-		  <h3 id="templatename"><%= template.name%></h3>
+		  <h3 id="templatename"><%= template.name%></h3>		    
 		<br>
 		<% @athletes.where(template_id: template.id).each do |athlete| %>
 			<%= athlete.first_name %> <%= athlete.last_name %> <br>
