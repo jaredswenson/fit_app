@@ -1,6 +1,6 @@
 class CustomFailure < Devise::FailureApp
     def redirect_url
-       home_index_url(:subdomain => 'secure')
+       root_path
     end
 
     # You need to override respond to eliminate recall

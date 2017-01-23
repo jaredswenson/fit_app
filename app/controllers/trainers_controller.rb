@@ -1,4 +1,5 @@
 class TrainersController < ApplicationController
+	before_action :authenticate_trainer!
 	def index
 		@athletes = Athlete.all
 		@exercises = Exercise.all

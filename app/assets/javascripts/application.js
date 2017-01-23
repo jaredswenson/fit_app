@@ -122,7 +122,7 @@ $(document).on('turbolinks:load', function () {
     $('#exerciseform').hide(); //hide exerciseform if it is open and opening templateform
     $('#templateform').fadeIn();
     $('html, body').animate({
-      scrollTop: $('#templateform').offset().top -80
+      scrollTop: $('#templateform').offset().top -100
     }, slowspeed);
     });
 
@@ -131,7 +131,7 @@ $(document).on('turbolinks:load', function () {
     $('#templateform').hide();//hide templateform if it is open when opening exerciseform
     $('#exerciseform').fadeIn();
     $('html, body').animate({
-      scrollTop: $('#exerciseform').offset().top -80
+      scrollTop: $('#exerciseform').offset().top -100
     }, slowspeed);
     });
 
