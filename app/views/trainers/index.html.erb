@@ -3,9 +3,16 @@
 		
 		<div class="trainer_card col-md-3" >
 			<h1> My Athletes </h1>
-			<% @athletes.each do |athlete| %>
+			<p id="basic">Basic: <%= @athletes.where(subscription_type: "Basic").count %></p>
+			<p id="premium">Premium: <%= @athletes.where(subscription_type: "Premium").count %></p>
+			<% @athletes.where(subscription_type: "Basic").each do |athlete| %></h5>
 				
 				<%= link_to(  "#{athlete.first_name} #{athlete.last_name} ", athlete_index_path(id: athlete.id), :class => "btn") %> <br>
+				
+			<% end %>
+			<% @athletes.where(subscription_type: "Premium").each do |athlete| %>
+				
+				<%= link_to(  "#{athlete.first_name} #{athlete.last_name} ", athlete_index_path(id: athlete.id), :class => "premiumbtn btn") %> <br>
 				
 			<% end %>
 		</div>
