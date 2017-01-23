@@ -1,4 +1,4 @@
-<div class="dashboard">
+<div class="dashboard trainerdashboard">
 	<div class="row">
 		
 		<div class="trainer_card col-md-3" >
@@ -58,7 +58,8 @@
 	<h1>Athletes Questions</h1>
 		<% @athletes.each do |athlete| %>
 		 	<% athlete.questions.each do |question| %>
-				<% if !question.read %>
+				<% if !question.read %> 
+					<%= athlete.first_name %> <%= athlete.last_name %> -
 					<%= question.content %>
 					<%= link_to('Visit Page', athlete_index_path(id: athlete.id), :id => "smallbutton") %>
 				<% else %>
