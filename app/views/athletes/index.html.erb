@@ -49,6 +49,10 @@
 					    Days Per Week: <%= f.select :days_per_week, [3,4,5], class: "select" %>
 					  </div>
 
+					  <div class="field profile">
+					    Days Per Week: <%= f.select :subscription_type, ["Basic", "Premium"], class: "select" %>
+					  </div>
+
 					  <div class="actions">
 					    <%= f.submit "Update", class: "btn", id: "update" %>
 					  </div> 
@@ -57,7 +61,7 @@
 					<% end %>
 				</div>
 			</div>
-				<div class="card col-md-4">
+				<div class="card col-md-4">	
 				<h1><%= @template.name %></h1>
 					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#scheduleModal">
 						  <h2>View Schedule</h2>

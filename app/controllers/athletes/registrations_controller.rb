@@ -43,12 +43,12 @@ before_action :configure_account_update_params, only: [:update]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :body_fat, :goal_weight, :gender, :age, :days_per_week, :goal, :trainer_id, :template_id, :calories, :carbs, :protein, :fats])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :body_fat, :goal_weight, :gender, :age, :days_per_week, :goal, :trainer_id, :template_id, :calories, :carbs, :protein, :fats, :subscription_type])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :body_fat, :goal_weight, :gender, :age, :days_per_week, :goal, :trainer_id, :template_id, :calories, :carbs, :protein, :fats])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :home_gym, :phone, :height, :weight, :body_fat, :goal_weight, :gender, :age, :days_per_week, :goal, :trainer_id, :template_id, :calories, :carbs, :protein, :fats, :subscription_type])
   end
 
   # The path used after sign up.

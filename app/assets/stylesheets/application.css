@@ -37,6 +37,12 @@ body{
 	margin-top: 3%;
 }
 
+.premiumbtn{
+	background-color: red;
+	color: white;
+	margin-top: 3%;
+}
+
 #smallbutton{
 	background-color: #02A9F4;
 	color: white;
@@ -287,3 +293,10 @@ select{
 	color: white;
 }
 
+#basic{
+	color: #02A9F4;
+}
+
+#premium{
+	color: red;
+}

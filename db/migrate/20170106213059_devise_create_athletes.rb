@@ -47,6 +47,7 @@ class DeviseCreateAthletes < ActiveRecord::Migration[5.0]
       t.integer  :carbs
       t.integer  :protein
       t.integer  :fats
+      t.string :subscription_type
 
       t.timestamps null: false
     end
