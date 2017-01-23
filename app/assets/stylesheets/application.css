@@ -252,12 +252,16 @@ body{
 .row{
 	margin-top: 1%;
 	display: none;
+	
+}
+
+.trainerdashboard{
 	position: relative;
-	top: -25px;
+	top: -15px;
 }
 
 .dashboard{
-	margin-top: 8%;
+	margin-top: 7%;
 }
 
 .loginput{
