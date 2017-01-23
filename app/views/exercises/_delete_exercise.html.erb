@@ -15,6 +15,7 @@
 		<% @exercises.where(category: "Shoulders").each do |exercise| %>
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
+				<p>Instruction: <%= exercise.instruction %></p>
 				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
@@ -25,6 +26,7 @@
 		<% @exercises.where(category: "Legs").each do |exercise| %>
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
+				<p>Instruction: <%= exercise.instruction %></p>
 				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
@@ -35,6 +37,7 @@
 		<% @exercises.where(category: "Chest").each do |exercise| %>
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
+				<p>Instruction: <%= exercise.instruction %></p>
 				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
@@ -45,6 +48,7 @@
 		<% @exercises.where(category: "Back").each do |exercise| %>
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
+				<p>Instruction: <%= exercise.instruction %></p>
 				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>
@@ -55,6 +59,7 @@
 		<% @exercises.where(category: "Core").each do |exercise| %>
 			<div class="specific_exercise" name="<%= exercise.name %>" value="<%= exercise.id %>">
 				<h3>Name: <%= exercise.name%></h3>
+				<p>Instruction: <%= exercise.instruction %></p>
 				<%= link_to "Delete Exercise", exercise_path(exercise), method: :delete, class: "btn" %>
 			</div>
 		<% end %>

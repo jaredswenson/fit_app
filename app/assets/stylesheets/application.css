@@ -16,9 +16,7 @@
 
 body{
 	font-family: serif;
-	background: url('/assets/deadlift.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
+	background: url('/assets/rack.jpg');
 }
 
 #header{
@@ -29,6 +27,23 @@ body{
 	position: fixed;
 	top: 0;
 	z-index: 999;
+}
+
+#footer{
+	width: 100%;
+	height: 70px;
+	background-color: black;
+	box-shadow: 0px -8px 5px white;
+	color: #02A9F4;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+}
+
+.filler{
+	width: 100%;
+	height: 70px;
 }
 
 .btn{
@@ -147,20 +162,20 @@ body{
 }
 
 .homebackground{
-	width: 70%;
+	width: 100%;
 	height: 300px;
 	margin: 1% auto;
-	/*background-color: rgba(165, 171, 172, .85);;*/
+	/*background: url('/assets/deadlift.jpg');*/
 	background-size: cover;
 	border-radius: 10px;
-	position:absolute;top:-1000px;left:215px;
+	position:absolute;top:-1000px;left:0px;
 
 }
 
 .appinfo{
 	width: 50%;
 	height: 300px;
-	background-color: rgba(165, 171, 172, .85);;
+	background-color: rgba(165, 171, 172, .85);
 	border-radius: 10px:;
 	position:absolute;bottom:-1000px;left:0px;right:0px;top:0px;
 	border-radius: 10px;
@@ -221,10 +236,6 @@ body{
 	color: white;
 }
 
-#infolog{
-	
-}
-
 .aboutus{
 	color: white;
 	width: 50%;
@@ -241,6 +252,8 @@ body{
 .row{
 	margin-top: 1%;
 	display: none;
+	position: relative;
+	top: -25px;
 }
 
 .dashboard{
@@ -284,7 +297,7 @@ select{
     right: 40px;
     background-color: black;
     color: white;
-    top: 755px;
+    top: 730px;
     z-index: 1;
 }
 

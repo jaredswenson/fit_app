@@ -1,4 +1,5 @@
 class AthletesController < ApplicationController
+  before_action :authenticate_athlete!, except: [:index]
   def info
   	@athlete = current_athlete
   end
