@@ -47,6 +47,14 @@ $(document).on('turbolinks:load', function () {
   $('.createbackground').animate({'left' : '15px'}, mediumspeed); //bring in new background
   $('.new_athlete').show("explode", { pieces: 20 }, slowspeed); //bring in new form
 
+  $('#subscription_type').on('change', function () {
+    if ($(this).val() == "Premium") {
+      $('#subscription_cost').text('$15 A Month');
+    } else {
+      $('#subscription_cost').text('$8 A Month');
+    }
+  })
+
   // hide home screen divs when sign in completed
   $('#signin').on('click', function () {
     $('#homelogin').fadeOut(extrafastspeed); 
