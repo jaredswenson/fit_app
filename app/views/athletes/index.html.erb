@@ -120,16 +120,21 @@
 				<% else %>
 					<h1>Set A Goal</h1>
 				<% end %>
-				<h3>Suggested Calories: <%= @athlete.calories %></h3>
-				<h3>Suggested Carbs: <%= @athlete.carbs %></h3>
-				<h3>Suggested Protein: <%= @athlete.protein %></h3>
-				<h3>Suggested Fats: <%= @athlete.fats %></h3>
+				<h3 id="calories">Suggested Calories: <%= @athlete.calories %></h3>
+				<h3 id="carbs">Suggested Carbs: <%= @athlete.carbs %></h3>
+				<h3 id="protein">Suggested Protein: <%= @athlete.protein %></h3>
+				<h3 id="fats">Suggested Fats: <%= @athlete.fats %></h3>
 
 			</div>
 
 
 			<div class="card col-md-4">
-				
+			<h1>Daily Nutrition Log</h1>
+				<input type="number" placeholder="Calories" id="caloriecounter"> <br> <br>
+				<input type="number" placeholder="Carbs" id="carbcounter"> <br> <br>
+				<input type="number" placeholder="Protien" id="proteincounter"> <br> <br>
+				<input type="number" placeholder="Fats" id="fatcounter"> <br>
+				<button class="btn" id="counterbtn">Submit</button>
 			</div>
 		</div>
 	</div>
