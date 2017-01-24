@@ -320,3 +320,17 @@ select{
 	color: red;
 }
 
+.dailymacros{
+	float: left;
+	display: inline;
+	width: 49%;
+	height: auto;
+	margin-top: -21px;
+}
+
+.macrolog{
+	float: left;
+	display: inline;
+	width: 49%;
+	height: auto;
+}
