@@ -155,11 +155,13 @@ $(document).on('turbolinks:load', function () {
     }
   });
 
+  $('#counterbtn').on('click', function () {
+    Cookies.set('calories', parseInt($('#calories').text().split(':')[1].trim() - $('#caloriecounter').val(), { expires: 1 }));
+    Cookies.set('carbs', parseInt($('#carbs').text().split(':')[1].trim() - $('#carbcounter').val(), { expires: 1 }));
+    Cookies.set('protein', parseInt($('#protein').text().split(':')[1].trim() - $('#proteincounter').val(), { expires: 1 }));
+    Cookies.set('fats', parseInt($('#fats').text().split(':')[1].trim() - $('#fatcounter').val(), { expires: 1 }));
+    console.log(parseInt($('#calories').text().split(':')[1].trim() - $('#caloriecounter').val()));
+  });
 });
-
-
-
-
-
 
 
