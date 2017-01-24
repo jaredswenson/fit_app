@@ -156,12 +156,48 @@ $(document).on('turbolinks:load', function () {
   });
 
   $('#counterbtn').on('click', function () {
-    Cookies.set('calories', parseInt($('#calories').text().split(':')[1].trim() - $('#caloriecounter').val(), { expires: 1 }));
-    Cookies.set('carbs', parseInt($('#carbs').text().split(':')[1].trim() - $('#carbcounter').val(), { expires: 1 }));
-    Cookies.set('protein', parseInt($('#protein').text().split(':')[1].trim() - $('#proteincounter').val(), { expires: 1 }));
-    Cookies.set('fats', parseInt($('#fats').text().split(':')[1].trim() - $('#fatcounter').val(), { expires: 1 }));
-    console.log(parseInt($('#calories').text().split(':')[1].trim() - $('#caloriecounter').val()));
+    if (cookies_present()) {
+      console.log("got into cookies present");
+      Cookies.set('calories', parseInt(Cookies.get('calories')) + ($('#caloriecounter').val() === '' ? 0 : parseInt($('#caloriecounter').val())), { expires: 1 });
+      Cookies.set('carbs', parseInt(Cookies.get('carbs')) + ($('#carbcounter').val() === '' ? 0 : parseInt($('#carbcounter').val())), { expires: 1 });
+      Cookies.set('proteins', parseInt(Cookies.get('proteins')) + ($('#proteincounter').val() === '' ? 0 : parseInt($('#proteincounter').val())), { expires: 1 });
+      Cookies.set('fats', parseInt(Cookies.get('fats')) + ($('#fatcounter').val() === '' ? 0 : parseInt($('#fatcounter').val())), { expires: 1 });
+    }
+    $('#caloriecounter').val('');
+    $('#carbcounter').val('');
+    $('#proteincounter').val('');
+    $('#fatcounter').val('');
+    update_nutrition();
   });
+  function update_nutrition() {
+    if (cookies_present()) {
+      $('#caloriestoday').text('Calories: ' + Cookies.get('calories'));
+      $('#carbstoday').text('Carbs: ' + Cookies.get('carbs'));
+      $('#proteinstoday').text('Proteins: ' + Cookies.get('proteins'));
+      $('#fatstoday').text('Fats: ' + Cookies.get('fats'));
+    }
+  };
+
+  function cookies_present() {
+    if (Cookies.get('calories') === undefined) {
+      console.log("got into calories");
+      Cookies.set('calories', 0);
+    }
+    if (Cookies.get('carbs') === undefined) {
+      console.log("got into carbs");
+      Cookies.set('carbs', 0);
+    }
+    if (Cookies.get('proteins') === undefined) {
+      console.log("got into proteins");
+      Cookies.set('proteins', 0);
+    }
+    if (Cookies.get('fats') === undefined) {
+      console.log("got into fats");
+      Cookies.set('fats', 0);
+    }
+    return true;
+  };
+  update_nutrition();
 });
 
 
