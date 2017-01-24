@@ -57,6 +57,6 @@ class AthletesController < ApplicationController
   private
 
   def athlete_params
-  	params.require(:athlete).permit(:gender, :age, :height, :weight, :goal_weight, :body_fat, :goal, :days_per_week, :template_id, :calories, :carbs, :protein, :fats, :subscription_type)
+  	params.require(:athlete).permit(:gender, :age, :height, :weight, :goal_weight, :body_fat, :goal, :days_per_week, :template_id, :calories, :carbs, :protein, :fats, :subscription_type, :card_number, :card_cvc, :card_expiration)
   end
 end

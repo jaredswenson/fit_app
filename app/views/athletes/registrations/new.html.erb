@@ -5,22 +5,15 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     <div class="form" id="createform">
-      <h2>Sign up</h2>
     
       <div class="field">
         <%= f.label :first_name %><br />
-        <%= f.text_field :first_name, autofocus: true %>
+        <%= f.text_field :first_name, autofocus: true, placeholder: "First Name" %>
       </div>
 
       <div class="field">
         <%= f.label :last_name %><br />
         <%= f.text_field :last_name %>
-      </div>
-
-      <div class="field">
-        <%= f.label :subscription_type %><br />
-        <%= f.select :subscription_type, ["Basic", "Premium"] %> <br>
-        <i>Premium workout will be available within 3 days.</i>
       </div>
 
       <div class="field">
@@ -41,8 +34,29 @@
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
       
-      
 
+      <div class="field">
+        <%= f.label :subscription_type %><br />
+        <%= f.select :subscription_type, ["Basic", "Premium"], {}, id: "subscription_type" %> <br>
+        <i>Premium workout will be available within 3 days.</i>
+      </div>
+
+      <h3 id="subscription_cost">$8 A Month</h3>  
+    
+      <div class="field">
+        <%= f.label :card_number %><br />
+        <%= f.text_field :card_number, maxlength: 16, minlength: 15 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :card_cvc %><br />
+        <%= f.text_field :card_cvc, maxlength: 4, minlength: 3 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :card_expiration %><br />
+        <%= f.date_select :card_expiration, discard_day: true %>
+      </div>
       
       <%= f.hidden_field :trainer_id, value:1 %>
 
