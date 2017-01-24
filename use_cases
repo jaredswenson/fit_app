@@ -16,7 +16,7 @@ WAITING ON API - monitor athletes nutrition logged-4
 
 ✓ chat with athletes-5
 
- payment-6
+✓ payment-6
 
 
 
@@ -30,7 +30,7 @@ Athlete can:
 
 ✓ receive workout schedule-2.5
 
-WAITING ON API - log nutrition daily-2.5
+✓ log nutrition daily-2.5
 
 ✓ select day you'd like view workout-2.5
 
@@ -43,34 +43,4 @@ WAITING ON API - log nutrition daily-2.5
 ✓ chat with trainer-5
 
 
-
-Workout Logic - 
-
-Mens Bulk
-3 days = arms + shoulders, chest + back, legs - 3x8
-
-4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x8
-
-5 days = Arms, Shoulders, Chest, Back, Legs - 3x8
-
-Mens Fat Loss
-3 days = arms + shoulders, chest + back, legs - 3x12
-
-4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x12
-
-5 days = Arms, Shoulders, Chest, Back, Legs - 3x12
-
-Womens Bulk
-3 days = arms + shoulders, chest + back, legs - 3x10
-
-4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x10
-
-5 days = Arms, Shoulders, Chest, Back, Legs - 3x10
-
-Womens Fat Loss
-3 days = arms + shoulders, chest + back, legs - 3x15
-
-4 days = Back + biceps, Chest + triceps, Shoulders, Legs - 3x15
-
-5 days = Arms, Shoulders, Chest, Back, Legs - 3x15
 

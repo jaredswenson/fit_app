@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124175353) do
+ActiveRecord::Schema.define(version: 20170113224446) do
 
   create_table "athletes", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -41,14 +41,12 @@ ActiveRecord::Schema.define(version: 20170124175353) do
     t.integer  "carbs"
     t.integer  "protein"
     t.integer  "fats"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.string   "subscription_type"
-    t.boolean  "subscribed"
-    t.string   "stripe_id"
     t.string   "card_number"
     t.string   "card_cvc"
     t.date     "card_expiration"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_athletes_on_email", unique: true
     t.index ["reset_password_token"], name: "index_athletes_on_reset_password_token", unique: true
     t.index ["template_id"], name: "index_athletes_on_template_id"

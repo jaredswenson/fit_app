@@ -154,45 +154,40 @@ $(document).on('turbolinks:load', function () {
       $('.hiddendivs').hide();
     }
   });
-
+  // sets cookie amount based on whats put in the input boxes
   $('#counterbtn').on('click', function () {
     if (cookies_present()) {
-      console.log("got into cookies present");
       Cookies.set('calories', parseInt(Cookies.get('calories')) + ($('#caloriecounter').val() === '' ? 0 : parseInt($('#caloriecounter').val())), { expires: 1 });
       Cookies.set('carbs', parseInt(Cookies.get('carbs')) + ($('#carbcounter').val() === '' ? 0 : parseInt($('#carbcounter').val())), { expires: 1 });
       Cookies.set('proteins', parseInt(Cookies.get('proteins')) + ($('#proteincounter').val() === '' ? 0 : parseInt($('#proteincounter').val())), { expires: 1 });
       Cookies.set('fats', parseInt(Cookies.get('fats')) + ($('#fatcounter').val() === '' ? 0 : parseInt($('#fatcounter').val())), { expires: 1 });
     }
-    $('#caloriecounter').val('');
+    $('#caloriecounter').val(''); //clears input boxes
     $('#carbcounter').val('');
     $('#proteincounter').val('');
     $('#fatcounter').val('');
     update_nutrition();
   });
   function update_nutrition() {
-    if (cookies_present()) {
+    if (cookies_present()) { //updates the h3 for the athlete to see what their logged nutrition is.
       $('#caloriestoday').text('Calories: ' + Cookies.get('calories'));
       $('#carbstoday').text('Carbs: ' + Cookies.get('carbs'));
       $('#proteinstoday').text('Proteins: ' + Cookies.get('proteins'));
       $('#fatstoday').text('Fats: ' + Cookies.get('fats'));
     }
   };
-
+  //checks to see if there are already cookies, if not makes them.
   function cookies_present() {
     if (Cookies.get('calories') === undefined) {
-      console.log("got into calories");
       Cookies.set('calories', 0);
     }
     if (Cookies.get('carbs') === undefined) {
-      console.log("got into carbs");
       Cookies.set('carbs', 0);
     }
     if (Cookies.get('proteins') === undefined) {
-      console.log("got into proteins");
       Cookies.set('proteins', 0);
     }
     if (Cookies.get('fats') === undefined) {
-      console.log("got into fats");
       Cookies.set('fats', 0);
     }
     return true;
