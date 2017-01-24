@@ -61,9 +61,25 @@ body{
 #smallbutton{
 	background-color: #02A9F4;
 	color: white;
-	margin-top: 3%;
+	/*margin-top: 3%;*/
 	float: right;
 }
+
+#smallbutton:hover{
+	background-color: white;
+	color: #02A9F4;
+}
+
+#questionbtn{
+	margin-top: -40px;
+	float: right;
+}
+
+#questionbtn:hover{
+	background-color: white;
+	color: #02A9F4;
+}
+
 
 #login{
 	border-bottom:1px black solid;
@@ -314,10 +330,13 @@ select{
 
 #basic{
 	color: #02A9F4;
+	display: inline;
 }
 
 #premium{
 	color: red;
+	display: inline;
+	margin-left: 5px;
 }
 
 .dailymacros{

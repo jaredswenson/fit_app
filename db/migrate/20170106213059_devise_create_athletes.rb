@@ -48,6 +48,9 @@ class DeviseCreateAthletes < ActiveRecord::Migration[5.0]
       t.integer  :protein
       t.integer  :fats
       t.string :subscription_type
+      t.string :card_number
+      t.string :card_cvc
+      t.date :card_expiration
 
       t.timestamps null: false
     end
