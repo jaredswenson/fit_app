@@ -312,10 +312,10 @@ select{
 
 .exit{
 	position: absolute;
-    right: 40px;
+    right: 4px;
     background-color: black;
     color: white;
-    top: 730px;
+    top: 641px;
     z-index: 1;
 }
 
