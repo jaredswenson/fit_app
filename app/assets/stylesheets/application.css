@@ -17,7 +17,7 @@
 body{
 	font-family: serif;
 	/*background: image-url('/assets/rack.jpg');*/
-	background-image:url('<%= asset_path("rack.jp") %> ');
+	background-image:url('<%= asset_path("rack.jpg") %> ');
 }
 
 #header{
