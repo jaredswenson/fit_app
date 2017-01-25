@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version - 2.3.3
 
-Things you may want to cover:
+To start the app run rails db:migrate followed by rails db:seed
 
-* Ruby version
+rails db:seed will create a trainer, basic list of excercises and also the basic workout templates
 
-* System dependencies
+afterwards you will be able to start the app up.
 
-* Configuration
+Trainer can:
+* Create workout templates for premium athletes
+* Create new excercises
+* View their current athletes
+* Go to their athletes dashboard to view their logged workouts
+* Receive quetsions from the athletes
+* Unread comments will show on the trainers dashboard, once the trainer has commented on the question it will no longer be unread.
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Athlete can:
+* Create profile, set goals, etc...
+* View their workout template
+* Start a workout from their template
+* Log workouts
+* View logged workouts
+* Ask trainer questions
+* View macro nutrition goals
+* Log daily macros(in a cookie, resets daily)
+* Workout template is assigned based on days per week and goals
+* Macro nutrition is assigned based on weight and goals
