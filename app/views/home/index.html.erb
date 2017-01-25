@@ -7,7 +7,7 @@
 	<% elsif trainer_signed_in? %>
 		<%= link_to "Go To Dashboard",  trainer_index_path, class: "btn headbtn"  %>
 	<% else %>
-	<div class="loginform">
+	<div align="center" class="loginform">
 		<h2>Log in</h2>
 		<%= form_for(:athlete, :url => session_path(:athlete)) do |f| %>
 		  <%= f.text_field :email, placeholder: "Email", id: "login" %> <br>
