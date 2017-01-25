@@ -16,7 +16,7 @@
 
 body{
 	font-family: serif;
-	background: image/image-url('/assets/rack.jpg');
+	background: image-url('/assets/rack.jpg');
 }
 
 #header{
