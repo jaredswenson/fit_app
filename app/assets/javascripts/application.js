@@ -32,7 +32,7 @@ $(document).on('turbolinks:load', function () {
   $('.appinfo').animate({'bottom' : '150px'},fastspeed)
   $('#homelogin').animate({'top' : '135px'},mediumspeed);
   $('.homebackground').animate({'top' : '90px'},fastspeed);
-  $('.appinfo').animate({'bottom' : '-300px'},fastspeed);
+  $('.appinfo').animate({'bottom' : '-200px'},fastspeed);
   
   // hide home screen divs when create account button is clicked
   $('#createbtn').on('click', function (e) {
