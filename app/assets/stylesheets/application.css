@@ -85,6 +85,7 @@ body{
 	border-bottom:1px black solid;
 	background-color: rgba(250, 250, 250, .9);
 	color: black;
+	width: 60%;
 }
 
 .loginform{
@@ -141,11 +142,17 @@ body{
 #homelogin{
 	background-color: rgba(165, 171, 172, .9);
 	width: 20%;
-    margin: auto;
-    position: relative;
-    top: -265px;
+    margin: 0 auto;
     border-radius: 10px;
-    position:absolute;top:-1300px;left:0px;right:0px;
+    position:relative;top:100px;left:0px;right:0px;
+}
+
+#createbtn{
+	width: 100%;
+}
+
+#signin{
+	width: 100%;
 }
 
 .form{
@@ -182,7 +189,7 @@ body{
 .homebackground{
 	width: 100%;
 	height: 300px;
-	margin: 1% auto;
+	margin: 10% auto;
 	background-size: cover;
 	border-radius: 10px;
 	position:absolute;top:-1000px;left:0px;
@@ -193,9 +200,9 @@ body{
 	width: 50%;
 	height: 300px;
 	background-color: rgba(165, 171, 172, .85);
-	position:absolute;bottom:-1000px;left:0px;right:0px;top:0px;
+	/*position:absolute;bottom:-1000px;left:0px;right:0px;top:0px;*/
 	border-radius: 10px;
-	margin: auto;
+	margin: 130px auto;
 
 }
 
@@ -206,8 +213,6 @@ body{
 	border-radius: 10px;
 	position:absolute;top:100;left:-2500px;
 }
-
-
 
 .updatebackground{
 	width: 98%;

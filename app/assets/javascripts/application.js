@@ -28,19 +28,18 @@ $(document).ready(function () {
 
 // animations for the home screen.
 $(document).on('turbolinks:load', function () {
-  $('.homebackground').animate({'top' : '150px'},fastspeed);
-  $('.appinfo').animate({'bottom' : '150px'},fastspeed)
-  $('#homelogin').animate({'top' : '135px'},mediumspeed);
-  $('.homebackground').animate({'top' : '90px'},fastspeed);
-  $('.appinfo').animate({'bottom' : '-200px'},fastspeed);
+  // $('.homebackground').animate({'top' : '150px'},fastspeed);
+  // $('#homelogin').animate({'top' : '135px'},mediumspeed);
+  // $('.homebackground').animate({'top' : '15%'},fastspeed);
+  // $('.appinfo').animate({'top' : '45%'},fastspeed);
   
   // hide home screen divs when create account button is clicked
   $('#createbtn').on('click', function (e) {
     e.preventDefault(); //prevent form from submitting to run animations
     $('#homelogin').fadeOut(extrafastspeed);
-    $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
+    // $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
-    $('.appinfo').animate({'bottom' : '-2000'}, fastspeed, function () {
+    $('.appinfo').fadeOut(extrafastspeed, function () {
       document.location = $self.attr('href'); //change doc location to button location
       });
   });
@@ -58,17 +57,17 @@ $(document).on('turbolinks:load', function () {
   // hide home screen divs when sign in completed
   $('#signin').on('click', function () {
     $('#homelogin').fadeOut(extrafastspeed); 
-    $('.homebackground').animate({'top' : '2000px'}, fastspeed);
-    $('.appinfo').animate({'top' : '-2000'}, fastspeed);
+    // $('.homebackground').animate({'top' : '2000px'}, fastspeed);
+    $('.appinfo').fadeOut(fastspeed);
   });
 
   // hide home screen divs when trainer sign in button is clicked
   $('#trainerbtn').on('click', function (e) {
     e.preventDefault();
-    $('#homelogin').fadeOut(extrafastspeed);
-    $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
+    $('#homelogin').fadeOut(fastspeed);
+    // $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
-    $('.appinfo').animate({'bottom' : '-2000'}, fastspeed, function () {
+    $('.appinfo').fadeOut(extrafastspeed, function () {
       document.location = $self.attr('href');
       });
   });
