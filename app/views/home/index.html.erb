@@ -1,7 +1,13 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 <div class="homebackground">
 	
 </div>
-<div class="login" id="homelogin" >
+
+
+<div class="parallax-container">
+    <div class="parallax"><img src="assets/deadliftbw.jpg">
+    <div class="login" id="homelogin" >
 	<% if athlete_signed_in? %>
 		<%= link_to "Go To Dashboard",  athlete_index_path, class: "btn headbtn"  %>
 	<% elsif trainer_signed_in? %>
@@ -21,16 +27,16 @@
 	</div>
 	<% end %>
 	
-</div>
-
-<div class="appinfo">
-	<div align="center" class="aboutus">
-		<h1>About Us</h1>
-		<h3>Basic</h3><h4>For just $8 a month get access to a personal trainer, a workout to fit to your needs and macro nutrition goals to help you diet!</h4>
-		<h3>Premium</h3><h4>For $15 a month get everyting in the basic package, plus you can request custom workouts and priority response from the trainer!</h4>
-	</div>
-</div>
-
-<div class="filler">
-	
+</div></div>
+  </div>
+  <div class="section white" id="about">
+    <div class="row container">
+      <h2 class="header">About Us</h2>
+      <p class="grey-text text-darken-3 lighten-3">
+		<h3>Basic:</h3><h4>For just $8 a month get access to a personal trainer, a workout to fit to your needs and macro nutrition goals to help you diet!</h4>
+		<h3>Premium:</h3><h4>For $15 a month get everyting in the basic package, plus you can request custom workouts and priority response from the trainer!</h4></p>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="assets/bwgirl.jpg"></div>
 </div>

@@ -104,10 +104,9 @@ body{
 #name{
 	color: #02A9F4;
 	margin: 0;
-	position: relative;
-	top: 40%;
 	display: inline;
 }
+
 
 .headbtn{
 	margin-top: 1%;
@@ -145,6 +144,7 @@ body{
     margin: 0 auto;
     border-radius: 10px;
     position:relative;top:100px;left:0px;right:0px;
+    z-index: 999;
 }
 
 #createbtn{
@@ -232,7 +232,7 @@ body{
 	width: 98%;
 	height: 600px;
 	margin: 6% auto;
-	background-image: url("/assets/bwgirl.jpg");
+	/*background-image: url("/assets/bwgirl.jpg");*/
 	background-size: cover;
 	border-radius: 10px;
 }
@@ -241,7 +241,7 @@ body{
 	width: 98%;
 	height: 600px;
 	margin: 6% auto;
-	background-image: url("/assets/hatedtraining.jpg");
+	/*background-image: url("/assets/hatedtraining.jpg");*/
 	background-size: cover;
 	border-radius: 10px;
 }
@@ -264,7 +264,6 @@ body{
 	color: white;
 	width: 50%;
 	margin: 0 auto;
-
 }
 
 .tracker{
@@ -358,4 +357,8 @@ select{
 	display: inline;
 	width: 49%;
 	height: auto;
+}
+
+.parallax-container{
+	z-index: 1;
 }

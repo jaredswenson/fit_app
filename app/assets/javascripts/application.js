@@ -27,19 +27,20 @@ $(document).ready(function () {
 });
 
 // animations for the home screen.
-$(document).on('turbolinks:load', function () {
+$(document).on('turbolinks:load', function () {  
+  $('.parallax').parallax();
   // $('.homebackground').animate({'top' : '150px'},fastspeed);
   // $('#homelogin').animate({'top' : '135px'},mediumspeed);
   // $('.homebackground').animate({'top' : '15%'},fastspeed);
-  // $('.appinfo').animate({'top' : '45%'},fastspeed);
+  // $('#about').animate({'top' : '45%'},fastspeed);
   
   // hide home screen divs when create account button is clicked
   $('#createbtn').on('click', function (e) {
     e.preventDefault(); //prevent form from submitting to run animations
-    // $('#homelogin').fadeOut(extrafastspeed);
+    $('.parallax-container').fadeOut(extrafastspeed);
     // $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
-    $('.appinfo').fadeOut(extrafastspeed, function () {
+    $('#about').fadeOut(extrafastspeed, function () {
       document.location = $self.attr('href'); //change doc location to button location
       });
   });
@@ -58,16 +59,16 @@ $(document).on('turbolinks:load', function () {
   $('#signin').on('click', function () {
     $('#homelogin').fadeOut(extrafastspeed); 
     // $('.homebackground').animate({'top' : '2000px'}, fastspeed);
-    $('.appinfo').fadeOut(fastspeed);
+    $('#about').fadeOut(fastspeed);
   });
 
   // hide home screen divs when trainer sign in button is clicked
   $('#trainerbtn').on('click', function (e) {
     e.preventDefault();
-    $('#homelogin').fadeOut(fastspeed);
+    $('.parallax-container').fadeOut(fastspeed);
     // $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
-    $('.appinfo').fadeOut(extrafastspeed, function () {
+    $('#about').fadeOut(extrafastspeed, function () {
       document.location = $self.attr('href');
       });
   });
