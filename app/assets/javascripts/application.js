@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', function () {
   // hide home screen divs when create account button is clicked
   $('#createbtn').on('click', function (e) {
     e.preventDefault(); //prevent form from submitting to run animations
-    $('#homelogin').fadeOut(extrafastspeed);
+    // $('#homelogin').fadeOut(extrafastspeed);
     // $('.homebackground').animate({'top' : '-1000px'},fastspeed); 
     var $self = $(this);
     $('.appinfo').fadeOut(extrafastspeed, function () {
